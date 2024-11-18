@@ -23,7 +23,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#CDCEC5] via-[#EBF5EE] to-[#CDCEC5] backdrop-blur-sm shadow-sm z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-gray-900 backdrop-blur-sm shadow-sm z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Profile Section */}
@@ -33,7 +33,7 @@ const Navbar = () => {
               alt="Henry Agukwe"
               className="w-10 h-15 rounded-full object-cover border-2 border-gray-200"
             />
-            <h1 className="text-lg font-bold text-gray-800 hidden sm:block">
+            <h1 className="text-lg font-bold text-gray-600 hidden sm:block">
               Henry Agukwe
             </h1>
           </div>

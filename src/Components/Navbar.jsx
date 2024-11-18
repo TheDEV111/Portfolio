@@ -10,6 +10,7 @@ import imageProfile from "../Assets/imageProfile.JPG";
 import { CgProfile } from "react-icons/cg";
 
 
+
 const profile = imageProfile
 
 const Navbar = () => {

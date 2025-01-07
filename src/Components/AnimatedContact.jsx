@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
+// import db from '../firebase/config';
+import { collection, addDoc, getFirestore } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, User, MessageSquare, Linkedin, Github, Twitter } from 'lucide-react';
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 
 const AnimatedContact = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +26,9 @@ const AnimatedContact = () => {
     message: ''
   });
 
-  // Animation variants
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,6 +57,66 @@ const AnimatedContact = () => {
       repeat: Infinity,
       repeatType: "reverse",
       ease: "easeInOut"
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Debug log the environment variables
+    console.log('Firebase Config Check:', {
+      hasApiKey: !!process.env.REACT_APP_FIREBASE_API_KEY,
+      hasProjectId: !!process.env.REACT_APP_FIREBASE_PROJECT_ID,
+      projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID
+    });
+
+    try {
+      console.log('Starting submission to Firestore...');
+      
+      // Create data object
+      const submissionData = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        status: 'new'
+      };
+
+      console.log('Submission data:', submissionData);
+
+      // Attempt to add document
+      const docRef = await addDoc(collection(db, 'contacts'), submissionData);
+      console.log('Document written with ID:', docRef.id);
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      setSubmitStatus('success');
+      setTimeout(() => setSubmitStatus(null), 5000);
+
+    } catch (error) {
+      console.error('Detailed error:', {
+        message: error.message,
+        code: error.code,
+        stack: error.stack,
+        details: error
+      });
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -160,7 +238,6 @@ const AnimatedContact = () => {
           variants={itemVariants}
           className="bg-gray-900/80 backdrop-blur-sm rounded-lg p-8 border border-gray-800 relative overflow-hidden"
         >
-          {/* Animated border gradient */}
           <motion.div 
             className="absolute inset-0"
             animate={{
@@ -186,7 +263,7 @@ const AnimatedContact = () => {
               Send Message<span className="text-emerald-500">.</span>
             </motion.h2>
             
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Input */}
               <motion.div 
                 className="relative"
@@ -198,15 +275,11 @@ const AnimatedContact = () => {
                   <input
                     type="text"
                     name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                     className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg py-3 px-10 text-white focus:outline-none focus:border-emerald-500 transition-all duration-300"
                     placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  />
-                  <motion.div
-                    className="absolute inset-0 border border-emerald-500/0 rounded-lg"
-                    whileHover={{ borderColor: "rgba(16, 185, 129, 0.2)" }}
-                    transition={{ duration: 0.2 }}
                   />
                 </div>
               </motion.div>
@@ -222,6 +295,9 @@ const AnimatedContact = () => {
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg py-3 px-10 text-white focus:outline-none focus:border-emerald-500 transition-all duration-300"
                     placeholder="your@email.com"
                   />
@@ -237,6 +313,9 @@ const AnimatedContact = () => {
                 <input
                   type="text"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
                   className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-emerald-500 transition-all duration-300"
                   placeholder="What's this about?"
                 />
@@ -252,6 +331,9 @@ const AnimatedContact = () => {
                   <MessageSquare className="absolute left-3 top-3 text-gray-500 w-5 h-5 group-hover:text-emerald-500 transition-colors" />
                   <textarea
                     name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                     rows="4"
                     className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg py-3 px-10 text-white focus:outline-none focus:border-emerald-500 transition-all duration-300"
                     placeholder="Your message"
@@ -265,9 +347,11 @@ const AnimatedContact = () => {
                 variants={itemVariants}
               >
                 <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-emerald-500 text-gray-900 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-emerald-400 flex items-center justify-center gap-2 relative overflow-hidden group"
+                  className="w-full bg-emerald-500 text-gray-900 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-emerald-400 flex items-center justify-center gap-2 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <motion.div
                     className="absolute inset-0 bg-emerald-400"
@@ -276,8 +360,20 @@ const AnimatedContact = () => {
                     transition={{ duration: 0.5 }}
                   />
                   <Send className="w-5 h-5 relative z-10" />
-                  <span className="relative z-10">Send Message</span>
+                  <span className="relative z-10">
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </span>
                 </motion.button>
+
+                {submitStatus === 'success' && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-emerald-500 text-center mt-4"
+                  >
+                    Message sent successfully! We'll get back to you soon.
+                  </motion.p>
+                )}
               </motion.div>
             </form>
           </div>
@@ -289,12 +385,15 @@ const AnimatedContact = () => {
           className="mt-16 flex justify-center space-x-6"
         >
           {[
-            { icon: Github, label: "GitHub" },
-            { icon: Linkedin, label: "LinkedIn" },
-            { icon: Twitter, label: "Twitter" }
-          ].map((social, index) => (
-            <motion.div
+            { icon: Github, label: "GitHub", link: "https://github.com/Henryno111" },
+            { icon: Linkedin, label: "LinkedIn", link: "https://linkedin.com/in/agukwe-henry" },
+            { icon: Twitter, label: "Twitter", link: "https://x.com/@boy_gene_us" }
+          ].map((social) => (
+            <motion.a
               key={social.label}
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.1,
@@ -308,7 +407,7 @@ const AnimatedContact = () => {
                 animate={floatingAnimation}
               />
               <social.icon className="w-6 h-6 relative z-10" />
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </motion.div>

@@ -3,19 +3,9 @@ import React, { useState } from 'react';
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { motion } from 'framer-motion';
+import { db } from '../config/firebase';
 import { Mail, Phone, MapPin, Send, User, MessageSquare, Linkedin, Github, Twitter } from 'lucide-react';
 
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 
 const AnimatedContact = () => {

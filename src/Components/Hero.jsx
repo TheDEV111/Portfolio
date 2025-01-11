@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { Github, Linkedin, Twitter, Mail, Terminal, Code2 } from 'lucide-react';
 
 const Hero = () => {
@@ -65,18 +66,22 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 mb-8">
+              <Link to="/projects"> 
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-emerald-500 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 hover:bg-emerald-400 text-center flex items-center justify-center gap-2"
+                >
+                  <Code2 className="w-5 h-5" />
+                  View Projects
+                </motion.button>
+              </Link>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-emerald-500 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 hover:bg-emerald-400 text-center flex items-center justify-center gap-2"
-              >
-                <Code2 className="w-5 h-5" />
-                View Projects
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-emerald-500 text-emerald-500 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 hover:bg-emerald-500 hover:text-gray-900 text-center"
+                className="border-2 border-emerald-500 text-emerald-500 px-6 py-3 rounded-lg font-semibold 
+                transition-colors duration-300 hover:bg-emerald-500 hover:text-gray-900 text-center
+                action"
               >
                 Download CV
               </motion.button>

@@ -76,15 +76,17 @@ const Hero = () => {
                   View Projects
                 </motion.button>
               </Link>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-emerald-500 text-emerald-500 px-6 py-3 rounded-lg font-semibold 
-                transition-colors duration-300 hover:bg-emerald-500 hover:text-gray-900 text-center
-                action"
-              >
-                Download CV
-              </motion.button>
+              <a href="/Frontend_resume.pdf" download>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-emerald-500 text-emerald-500 px-6 py-3 rounded-lg font-semibold 
+                  transition-colors duration-300 hover:bg-emerald-500 hover:text-gray-900 text-center
+                  action"
+                >
+                  Download CV
+                </motion.button>
+              </a>
             </div>
 
             {/* Social Links */}

@@ -8,26 +8,26 @@ const ProjectsSection = () => {
     {
       title: "DOCmeet",
       description: "A Real-time mobile responsive medical appointment and consultation web application",
-      tech: ["React", "Node.js", "WebSocket", "Chart.js"],
-      github: "https://github.com/username/analytics-dashboard",
-      live: "https://analytics-dashboard.demo",
-      image: "/api/placeholder/600/400"
+      tech: ["React", "Node.js", "ExpressJS", "MongoDB"],
+      github: "https://github.com/Henryno111/DOCmeet_web_app/tree/main",
+      live: "https://do-cmeet-web-app.vercel.app/",
+      image: "/Docmeet.png"
     },
     {
-      title: "Smart Contract DApp",
+      title: "GTF(Green Tourism Fund)",
       description: "Decentralized application for NFT marketplace with MetaMask integration, built on Ethereum blockchain using Solidity and Web3.js.",
-      tech: ["Solidity", "Web3.js", "React", "Ethereum"],
+      tech: ["Clarity", "Vite", "React", "Ethereum"],
       github: "https://github.com/username/nft-marketplace",
       live: "https://nft-marketplace.demo",
       image: "/api/placeholder/600/400"
     },
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with features like cart management, payment processing, and admin dashboard.",
-      tech: ["Next.js", "MongoDB", "Stripe", "TypeScript"],
+      title: "Bridgarr",
+      description: "Full-stack e-commerce/escrow solution with features like cart management, payment processing, and admin dashboard.",
+      tech: ["Next.js", "Postgresql","Django", "TypeScript"],
       github: "https://github.com/username/ecommerce",
-      live: "https://ecommerce.demo",
-      image: "/api/placeholder/600/400"
+      live: "https://app.bridgarr.com.ng/",
+      image: "/Bridgarr.png"
     }
   ];
 

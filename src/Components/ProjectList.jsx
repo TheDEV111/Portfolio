@@ -11,27 +11,27 @@ const ProjectList = () => {
 
   const projects = [
     {
-      title: "Analytics Dashboard",
-      description: "Real-time analytics dashboard built with React, Node.js, and WebSocket for live data visualization and monitoring.",
-      longDescription: "A comprehensive analytics platform that provides real-time insights through interactive charts and customizable dashboards. Features include user activity tracking, performance metrics, and automated reporting.",
-      tech: ["React", "Node.js", "WebSocket", "Chart.js"],
-      github: "https://github.com/yourusername/project1",
-      live: "https://project1.com",
+      title: "DOCmeet",
+      description: "A Real-time mobile responsive medical appointment and consultation web application",
+      longDescription: "DOCmeet is a cutting-edge, real-time, mobile-responsive medical appointment and consultation web application. Designed to streamline the process of scheduling and managing medical appointments, DOCmeet offers a seamless user experience for both patients and healthcare providers.",
+      tech: ["Vite", "Node.js", "WebSocket", "Stripe", "MongoDB"],
+      github: "https://github.com/Henryno111/DOCmeet_web_app/tree/main",
+      live: "https://do-cmeet-web-app.vercel.app/",
       icon: Radio,
-      category: "Full Stack",
-      image: "/api/placeholder/600/400",
+      category: ["Full Stack", "Frontend"],
+      image: "/Docmeet.png",
       features: [
         "Real-time data visualization",
         "Customizable dashboards",
         "User activity tracking",
         "Automated reporting",
-        "Performance metrics"
+        "Mail verification"
       ],
       challenges: "Implementing efficient real-time data synchronization while maintaining performance",
       outcome: "50% improvement in data processing speed and 30% increase in user engagement"
     },
     {
-      title: "Smart Contract DApp",
+      title: "GTF(Green Tourism Fund)",
       description: "Decentralized application for NFT marketplace with smart contract integration using Solidity and Web3.js.",
       longDescription: "A secure and scalable NFT marketplace allowing users to mint, buy, sell, and trade digital assets. Implements ERC-721 standards with advanced trading features.",
       tech: ["React", "Solidity", "Web3.js", "Ethereum"],

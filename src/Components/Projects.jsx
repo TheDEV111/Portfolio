@@ -15,11 +15,11 @@ const ProjectsSection = () => {
     },
     {
       title: "GTF(Green Tourism Fund)",
-      description: "Decentralized application for NFT marketplace with MetaMask integration, built on Ethereum blockchain using Solidity and Web3.js.",
-      tech: ["Clarity", "Vite", "React", "Ethereum"],
-      github: "https://github.com/username/nft-marketplace",
-      live: "https://nft-marketplace.demo",
-      image: "/api/placeholder/600/400"
+      description: "Decentralized application for funding and wildlife projects using blockchain technology.",
+      tech: ["Clarity", "Vite", "Ethereum"],
+      github: "https://github.com/orgs/GreenTourismFund-GTF/repositories",
+      live: "https://gtf.vercel.app/",
+      image: "/GTF.png"
     },
     {
       title: "Bridgarr",

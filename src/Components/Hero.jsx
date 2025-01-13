@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import { Github, Linkedin, Twitter, Mail, Terminal, Code2 } from 'lucide-react';
 
 const Hero = () => {

@@ -18,7 +18,7 @@ const ProjectList = () => {
       github: "https://github.com/Henryno111/DOCmeet_web_app/tree/main",
       live: "https://do-cmeet-web-app.vercel.app/",
       icon: Radio,
-      category: ["Full Stack", "Frontend"],
+      category: "Full Stack",
       image: "/Docmeet.png",
       features: [
         "Real-time data visualization",
@@ -32,25 +32,62 @@ const ProjectList = () => {
     },
     {
       title: "GTF(Green Tourism Fund)",
-      description: "Decentralized application for NFT marketplace with smart contract integration using Solidity and Web3.js.",
+      description: "Decentralized application for funding and wildlife projects using blockchain technology.",
       longDescription: "A secure and scalable NFT marketplace allowing users to mint, buy, sell, and trade digital assets. Implements ERC-721 standards with advanced trading features.",
-      tech: ["React", "Solidity", "Web3.js", "Ethereum"],
-      github: "https://github.com/yourusername/project2",
-      live: "https://project2.com",
+      tech: ["Clarity", "Vite", "Ethereum"],
+      github: "https://github.com/orgs/GreenTourismFund-GTF/repositories",
+      live: "https://gtf.vercel.app/",
       icon: Blocks,
       category: "Blockchain",
-      image: "/api/placeholder/600/400",
+      image: "/GTF.png",
       features: [
-        "NFT minting and trading",
+        "Crowdfunding platform",
         "Wallet integration",
-        "Gas fee optimization",
+        "Cross-chain compatibility",
         "Smart contract automation",
-        "Auction system"
       ],
-      challenges: "Optimizing gas fees and ensuring secure smart contract implementation",
-      outcome: "Successfully processed over 1000 NFT transactions with zero security incidents"
+      challenges: "Implementing secure wallet integration and cross-chain compatibility",
+      outcome: "implemented secure wallet integration and cross-chain compatibility using Xverse and leather wallet"
     },
-    // Add more projects as needed
+    {
+      title: "Bridgarr",
+      description: "Full-stack e-commerce/escrow solution with features like cart management, payment processing, and admin dashboard.",
+      longDescription: "Bridgarr is a full-stack e-commerce platform that offers a secure and reliable escrow service for online transactions. With features like cart management, payment processing, and an admin dashboard, Bridgarr provides a seamless shopping experience for both buyers and sellers.",
+      tech: ["Next.js", "Postgresql","Django", "TypeScript"],
+      github: "https://github.com/username/ecommerce",
+      live: "https://app.bridgarr.com.ng/",
+      icon: Database,
+      category: "Full Stack",
+      image: "/Bridgarr.png",
+      features: [
+        "Secure payment gateway",
+        "User-friendly admin dashboard",
+        "Reliable escrow service",
+        "Secure wallet deposits",
+      ],
+      challenges: "Implementing standard and secure KYC verification",
+      outcome: "Looking to implore external KYC verification services to ensure secure transactions"
+    },
+    {
+      title: "Portfolio Website",
+      description: "A responsive portfolio website built with React,Tailwind CSS and Firebase.",
+      longDescription: "A responsive portfolio website built with React and Tailwind CSS. The website showcases my latest projects, skills, and experience in full-stack development, blockchain, and smart contracts.",
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/Henryno111/Portfolio",
+      live: "https://devhenryno.vercel.app/",
+      icon: Globe,
+      category: "Full Stack",
+      image: "/Portfolio.png",
+      features: [
+        "Responsive design",
+        "Interactive animations",
+        "Dynamic content",
+        "SEO optimization",
+      ],
+      challenges: "Implementing dynamic content and SEO optimization",
+      outcome: "Improved SEO ranking and user engagement"
+
+    }
   ];
 
   const containerVariants = {

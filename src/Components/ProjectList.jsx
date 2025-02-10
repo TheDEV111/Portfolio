@@ -11,6 +11,26 @@ const ProjectList = () => {
 
   const projects = [
     {
+      title: "African Trade Empire",
+      description: "African Trade Empire is an innovative NFT card game and trading platform built on the Flow blockchain ",
+      longDescription: "African Trade Empire is a groundbreaking NFT card game and trading hub on the Flow blockchain, blending tactical gameplay with AI-driven market insights. Players acquire, exchange, and utilize merchant cards inspired by historical African traders, each possessing distinct skills and trade expertise.",
+      tech: ["Nextjs", "Node.js", "Framer", "Flow-cli","Flow-client-library", "cadence", "Lucide-react"],
+      github: "",
+      live: "https://african-trading-empire-ea85.vercel.app/",
+      icon: Radio,
+      category: "Blockchain",
+      image: "/AT-Empire.png",
+      features: [
+        "Command Center Dashboard: Monitor your merchant fleet and trading empire statistics",
+        "Inventory Management: Track and manage your merchant cards and assets",
+        "Smart Contract Integration: Built on Flow blockchain for secure transactions",
+        "Web3 wallet integration using native flow blockchain wallet",
+        "Mail verification"
+      ],
+      challenges: "Cadence smart contract deployment and integration",
+      outcome: "deployed smart contract on testnet"
+    },
+    {
       title: "DOCmeet",
       description: "A Real-time mobile responsive medical appointment and consultation web application",
       longDescription: "DOCmeet is a cutting-edge, real-time, mobile-responsive medical appointment and consultation web application. Designed to streamline the process of scheduling and managing medical appointments, DOCmeet offers a seamless user experience for both patients and healthcare providers.",
@@ -36,7 +56,7 @@ const ProjectList = () => {
       longDescription: "A secure and scalable NFT marketplace allowing users to mint, buy, sell, and trade digital assets. Implements ERC-721 standards with advanced trading features.",
       tech: ["Clarity", "Vite", "Ethereum"],
       github: "https://github.com/orgs/GreenTourismFund-GTF/repositories",
-      live: "https://gtf.vercel.app/",
+      live: "https://greentrustfund.vercel.app/",
       icon: Blocks,
       category: "Blockchain",
       image: "/GTF.png",

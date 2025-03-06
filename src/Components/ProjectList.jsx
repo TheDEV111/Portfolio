@@ -70,6 +70,25 @@ const ProjectList = () => {
       outcome: "implemented secure wallet integration and cross-chain compatibility using Xverse and leather wallet"
     },
     {
+      title: "Euron referral code genrator/API service",
+      description: "A RESTful API server for storing and managing referral codes for the Euron platform.",
+      longDescription: "Euron referral code generator and API service is a custom-built solution for generating unique referral codes and managing referral programs. The platform offers a seamless experience for users to create, track, and manage referral codes, with advanced analytics and reporting features.",
+      tech: ["Node.js", "Express.js", "MongoDB", "Swagger"],
+      github: "https://github.com/Henryno111/euron-referral-api",
+      live: "N/A",
+      icon: Terminal,
+      category: "Backend",
+      image: "N/A",
+      features: [
+        "Referral code generation",
+        "User management",
+        "Analytics dashboard",
+        "API documentation",
+      ],
+      challenges: "Implementing secure authentication and authorization",
+      outcome: "Implemented secure authentication and authorization using JWT tokens"
+    },
+    {
       title: "Bridgarr",
       description: "Full-stack e-commerce/escrow solution with features like cart management, payment processing, and admin dashboard.",
       longDescription: "Bridgarr is a full-stack e-commerce platform that offers a secure and reliable escrow service for online transactions. With features like cart management, payment processing, and an admin dashboard, Bridgarr provides a seamless shopping experience for both buyers and sellers.",

@@ -1,4 +1,5 @@
 import { ComponentType, ReactNode } from 'react';
+import { LucideProps } from 'lucide-react';
 
 export interface Project {
   title: string;
@@ -8,7 +9,7 @@ export interface Project {
   github: string;
   live: string;
   image: string;
-  icon?: ComponentType<{ className?: string }>;
+  icon?: ComponentType<LucideProps>;
   category: string;
   features: string[];
   challenges: string;
@@ -37,7 +38,7 @@ export interface ContactFormData {
 }
 
 export interface SocialLink {
-  icon: ComponentType<{ className?: string; size?: number }>;
+  icon: ComponentType<LucideProps>;
   href: string;
   label: string;
 }
@@ -49,7 +50,7 @@ export interface NavLink {
 }
 
 export interface ContactInfo {
-  icon: ComponentType<{ className?: string }>;
+  icon: ComponentType<LucideProps>;
   title: string;
   content: string;
 }

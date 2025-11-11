@@ -11,7 +11,7 @@ const ProjectsSection: React.FC = () => {
       description: "A slack-like community platform for founders and investors in America",
       longDescription: "Black Founders Network is a comprehensive community platform designed to connect Black entrepreneurs, founders, and investors across America. Built with real-time communication features, the platform facilitates networking, resource sharing, mentorship opportunities, and collaborative growth. It serves as a digital hub where founders can showcase their startups, seek funding, share insights, and build meaningful connections within the Black entrepreneurship ecosystem.",
       tech: ["Vite", "PHP", "Pusher.js", "MySQL", "JavaScript"],
-      github: "https://github.com/private",
+      github: "Undisclosed",
       live: "https://blackfounders.network/",
       image: "/BFN.png",
       category: "Frontend",

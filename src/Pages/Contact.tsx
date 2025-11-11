@@ -1,12 +1,12 @@
 import React from 'react';
-import Footer from '@/Components/Footer';
-import Navbar from '@/Components/Navbar';
+import NavbarEnhanced from '@/Components/NavbarEnhanced';
 import AnimatedContact from '@/Components/AnimatedContact';
+import Footer from '@/Components/Footer';
 
 const Contact: React.FC = () => {
   return (
     <div className='min-h-screen'>
-      <Navbar />
+      <NavbarEnhanced />
       <main className='pt-16'>
         <AnimatedContact />
       </main>

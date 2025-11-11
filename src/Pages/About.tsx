@@ -1,16 +1,18 @@
 import React from 'react';
-import Navbar from '@/Components/Navbar';
-import Footer from '@/Components/Footer';
+import NavbarEnhanced from '@/Components/NavbarEnhanced';
 import AboutSection from '@/Components/AboutSection';
+import Footer from '@/Components/Footer';
 
 const About: React.FC = () => {
   return (
-    <div className='min-h-screen'>
-      <Navbar />
-      <main className='pt-10'>
+    <div className="min-h-screen">
+      <NavbarEnhanced />
+      <main className="pt-16">
         <AboutSection />
       </main>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

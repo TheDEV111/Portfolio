@@ -1,17 +1,17 @@
 import React from 'react';
-import Navbar from '@/Components/Navbar';
-import Hero from '@/Components/Hero';
-import Project from '@/Components/Projects';
+import NavbarEnhanced from '@/Components/NavbarEnhanced';
+import HeroEnhanced from '@/Components/HeroEnhanced';
+import ProjectsEnhanced from '@/Components/ProjectsEnhanced';
 import Footer from '@/Components/Footer';
 
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <NavbarEnhanced />
       {/* Add padding-top to account for fixed navbar */}
       <main className="pt-16">
-        <Hero />
-        <Project />
+        <HeroEnhanced />
+        <ProjectsEnhanced />
       </main>
       <div className='pt-2'>
         <Footer />

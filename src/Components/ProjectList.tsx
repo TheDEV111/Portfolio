@@ -118,6 +118,26 @@ const ProjectList: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: "Black Founders Network",
+      description: "A slack-like community platform for founders and investors in America",
+      longDescription: "Black Founders Network is a comprehensive community platform designed to connect Black entrepreneurs, founders, and investors across America. Built with real-time communication features, the platform facilitates networking, resource sharing, mentorship opportunities, and collaborative growth. It serves as a digital hub where founders can showcase their startups, seek funding, share insights, and build meaningful connections within the Black entrepreneurship ecosystem.",
+      tech: ["Vite", "PHP", "Pusher.js", "MySQL", "JavaScript"],
+      github: "https://github.com/private",
+      live: "https://blackfounders.network/",
+      icon: Globe,
+      category: "Frontend",
+      image: "/BFN.png",
+      features: [
+        "Real-time messaging and notifications",
+        "Community channels and direct messaging",
+        "Founder and investor profiles",
+        "Resource sharing and networking tools",
+        "Event management and announcements"
+      ],
+      challenges: "Building a scalable real-time messaging system with Pusher.js while ensuring smooth user experience across different devices. Managing complex user relationships and implementing efficient database queries for community interactions.",
+      outcome: "Successfully launched with an active community of founders and investors. Platform facilitates meaningful connections and has become a vital resource for Black entrepreneurship in America."
+    },
+    {
       title: "African Trade Empire",
       description: "African Trade Empire is an innovative NFT card game and trading platform built on the Flow blockchain",
       longDescription: "African Trade Empire is a groundbreaking NFT card game and trading hub on the Flow blockchain, blending tactical gameplay with AI-driven market insights. Players acquire, exchange, and utilize merchant cards inspired by historical African traders, each possessing distinct skills and trade expertise.",

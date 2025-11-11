@@ -7,6 +7,25 @@ import type { Project } from '@/types';
 const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
     {
+      title: "Black Founders Network",
+      description: "A slack-like community platform for founders and investors in America",
+      longDescription: "Black Founders Network is a comprehensive community platform designed to connect Black entrepreneurs, founders, and investors across America. Built with real-time communication features, the platform facilitates networking, resource sharing, mentorship opportunities, and collaborative growth. It serves as a digital hub where founders can showcase their startups, seek funding, share insights, and build meaningful connections within the Black entrepreneurship ecosystem.",
+      tech: ["Vite", "PHP", "Pusher.js", "MySQL", "JavaScript"],
+      github: "https://github.com/private",
+      live: "https://blackfounders.network/",
+      image: "/BFN.png",
+      category: "Frontend",
+      features: [
+        "Real-time messaging and notifications",
+        "Community channels and direct messaging",
+        "Founder and investor profiles",
+        "Resource sharing and networking tools",
+        "Event management and announcements"
+      ],
+      challenges: "Building a scalable real-time messaging system with Pusher.js while ensuring smooth user experience across different devices. Managing complex user relationships and implementing efficient database queries for community interactions.",
+      outcome: "Successfully launched with an active community of founders and investors. Platform facilitates meaningful connections and has become a vital resource for Black entrepreneurship in America."
+    },
+    {
       title: "DOCmeet",
       description: "A Real-time mobile responsive medical appointment and consultation web application",
       longDescription: "A comprehensive healthcare platform that connects patients with doctors through real-time video consultations, appointment scheduling, and medical record management.",

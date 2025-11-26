@@ -38,6 +38,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           <img
             src={project.image}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             className="w-full rounded-lg mb-6 object-cover"
           />
 
@@ -403,6 +405,8 @@ const ProjectList: React.FC = () => {
         <img
           src={project.image}
           alt={project.title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-48 object-cover"
         />
         <div className="absolute inset-0 bg-gray-900/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

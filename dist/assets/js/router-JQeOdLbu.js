@@ -1,4 +1,4 @@
-import{r as s,R as ve}from"./vendor-BvOuhz89.js";/**
+import{r as s,R as ve}from"./react-vendor-BvOuhz89.js";/**
  * @remix-run/router v1.19.2
  *
  * Copyright (c) Remix Software Inc.

@@ -13,6 +13,106 @@ const ProjectsSection: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: "MetaFlux",
+      description: "A decentralized crypto expense management platform with budgeting, delegation, and rewards system",
+      longDescription: "MetaFlux is a comprehensive Web3 expense management platform that revolutionizes how individuals and businesses track crypto transactions. Built on the Linea blockchain, it features automated transaction categorization, budget tracking, secure delegation controls, and an innovative NFT rewards system. Users can earn cashback and exclusive NFT badges for responsible financial management while maintaining enterprise-grade security with multi-signature authentication.",
+      tech: ["React", "TypeScript", "Solidity", "Linea", "Metamask", "Verax"],
+      github: "Undisclosed",
+      live: "https://meta-flux.vercel.app/",
+      image: "/metaflux.png",
+      category: "Blockchain",
+      features: [
+        "Automated crypto transaction categorization",
+        "Real-time budget monitoring and alerts",
+        "Secure spending delegation with limits",
+        "NFT rewards and 3% cashback system",
+        "Multi-signature authentication",
+        "On-chain records on Linea blockchain"
+      ],
+      challenges: "Building a decentralized expense tracking system that seamlessly integrates with traditional accounting software while maintaining blockchain security. Implementing a fair and engaging rewards system that incentivizes responsible financial management.",
+      outcome: "Successfully launched with $240M+ in transaction volume managed, 65K+ active users, 92% budget adherence rate, and $1.2M in rewards distributed. Platform has revolutionized crypto expense management for both individuals and enterprises."
+    },
+    {
+      title: "GameChain",
+      description: "A blockchain-powered trivia gaming platform combining AI, Web3, and community engagement",
+      longDescription: "GameChain revolutionizes the intersection of gaming, learning, and blockchain technology. This decentralized trivia platform leverages AI-powered question generation to create personalized learning experiences while integrating Web3 features for staking rewards, earning tokens, and true ownership of gaming assets. Players can create custom games, host tournaments, compete globally, and earn NFT rewards while transforming knowledge acquisition into an engaging, gamified experience.",
+      tech: ["React", "TypeScript", "Solidity", "Web3", "AI/ML"],
+      github: "Undisclosed",
+      live: "https://gamechain-client.vercel.app/",
+      image: "/Gamechain.png",
+      category: "Blockchain",
+      features: [
+        "AI-powered trivia question generation",
+        "Web3 staking and token rewards",
+        "Custom game creation & tournaments",
+        "NFT rewards and achievements",
+        "Global leaderboards and multiplayer",
+        "Learn & Earn gamification model"
+      ],
+      challenges: "Integrating AI-powered question generation with blockchain technology while maintaining seamless real-time gameplay. Designing a fair reward distribution system that incentivizes both learning and competition.",
+      outcome: "Successfully launched with 1K+ active players, 50+ games created, and 24/7 platform activity. Platform has transformed trivia gaming into a rewarding Web3 experience combining entertainment, education, and earning."
+    },
+    {
+      title: "Text2Speech Converter",
+      description: "A web-based text-to-speech converter with multiple voice options and language support",
+      longDescription: "Text2Speech Converter is a user-friendly web application that transforms written text into natural-sounding speech using Google's Text-to-Speech API. Built with vanilla JavaScript, HTML, and CSS, it provides an intuitive interface for converting text to audio with customizable voice options, speech rates, and multiple language support.",
+      tech: ["JavaScript", "HTML5", "CSS3", "Google TTS API"],
+      github: "https://github.com/Henryno111/Text-to-speech-converter",
+      live: "https://text-to-speech-converter-umber.vercel.app/",
+      image: "/Text2Speech.png",
+      category: "Frontend",
+      features: [
+        "Real-time text-to-speech conversion",
+        "Multiple voice options and accents",
+        "Adjustable speech rate and pitch",
+        "Multi-language support",
+        "Clean and responsive interface",
+        "Cross-browser compatibility"
+      ],
+      challenges: "Integrating Google's Text-to-Speech API seamlessly while ensuring cross-browser compatibility and optimal performance. Designing an intuitive UI that makes voice customization accessible to all users.",
+      outcome: "Successfully deployed a fully functional text-to-speech converter providing natural-sounding voice output with multiple customization options. Serves as an accessible tool for content creators, educators, and users with accessibility needs."
+    },
+    {
+      title: "Architecture Builder Web App",
+      description: "An interactive tool for creating and visualizing system architecture diagrams using D3.js",
+      longDescription: "Architecture Builder is a powerful web-based tool for designing and visualizing system architecture diagrams. Built with D3.js for dynamic data visualization, this application enables developers and architects to create interactive architectural diagrams with drag-and-drop functionality, node management, and real-time connection handling.",
+      tech: ["JavaScript", "D3.js", "HTML5", "CSS3", "React"],
+      github: "https://github.com/Henryno111/web-app-architecture",
+      live: "https://web-app-architecture.vercel.app/",
+      image: "/architcture-builder-app.png",
+      category: "Frontend",
+      features: [
+        "Interactive drag-and-drop node positioning",
+        "Dynamic connection management",
+        "Real-time diagram updates with D3.js",
+        "Node and connection selection/editing",
+        "Visual system relationship mapping",
+        "Responsive canvas for complex diagrams"
+      ],
+      challenges: "Implementing smooth drag-and-drop functionality with D3.js while maintaining performance with complex diagrams. Creating an intuitive interface for managing node connections and ensuring the visualization scales properly for large-scale architectures.",
+      outcome: "Successfully deployed an interactive architecture diagram tool that simplifies creating and visualizing system designs. Provides developers and architects with an efficient way to communicate technical designs through visual diagrams."
+    },
+    {
+      title: "Circularity Nexus",
+      description: "Waste-to-wealth tokenization platform combining AI verification, blockchain, and DeFi rewards",
+      longDescription: "Circularity Nexus is a revolutionary blockchain platform that transforms everyday waste into tradeable digital assets. Built on Hedera Hashgraph with AI-powered verification using Groq Llama3-8B, it enables users to tokenize recyclable materials through mobile scanning, earn DeFi rewards up to 25% APY, and convert tokens to carbon credits with verified environmental impact.",
+      tech: ["React", "TypeScript", "Hedera", "Groq AI", "Llama3-8B", "DeFi"],
+      github: "Undisclosed",
+      live: "https://circularity-nexus.vercel.app/",
+      image: "/circularity-nexus.png",
+      category: "Blockchain",
+      features: [
+        "AI waste verification (95%+ accuracy)",
+        "Mobile-first scanning & classification",
+        "50+ waste types with material tokens",
+        "DeFi yield farming (5-25% APY)",
+        "Carbon credit conversion system",
+        "Hedera blockchain (10,000 TPS)"
+      ],
+      challenges: "Integrating AI-powered waste verification with blockchain while maintaining sub-2 second processing. Building a fair tokenization model with material-specific multipliers. Creating a sustainable DeFi ecosystem with corporate ESG partners.",
+      outcome: "Successfully launched with 2.5M tons waste recycled, 1.8M CO₂ reduced, 150K active users, and $12M rewards distributed. Operating in 25+ countries with measurable environmental impact verified by blockchain and third-party auditors."
+    },
+    {
       title: "Black Founders Network",
       description: "A slack-like community platform for founders and investors in America",
       longDescription: "Black Founders Network is a comprehensive community platform designed to connect Black entrepreneurs, founders, and investors across America. Built with real-time communication features, the platform facilitates networking, resource sharing, mentorship opportunities, and collaborative growth. It serves as a digital hub where founders can showcase their startups, seek funding, share insights, and build meaningful connections within the Black entrepreneurship ecosystem.",

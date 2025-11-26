@@ -69,7 +69,7 @@ export default Developer;`}
             </motion.div>
 
             <p className="text-base sm:text-lg text-gray-400 mb-8">
-              I design dynamic, responsive web applications that blend innovation with seamless user experiences. With over 2 years of expertise, I create products that captivate and engage users, turning ideas into impactful digital solutions.
+              I design dynamic, responsive web applications that blend innovation with seamless user experiences. With over 3+ years of expertise, I create products that captivate and engage users, turning ideas into impactful digital solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 mb-8">
@@ -151,7 +151,7 @@ export default Developer;`}
                   <div className="text-center">
                     <h3 className="text-emerald-500 font-mono text-sm mb-2">{`<${tech} />`}</h3>
                     <p className="text-gray-400 text-sm">
-                      2+ years
+                      3+ years
                     </p>
                   </div>
                 </motion.div>

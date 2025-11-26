@@ -166,7 +166,7 @@ const Hero: React.FC = () => {
             className="text-lg text-gray-400 mb-8 leading-relaxed"
           >
             I design <span className="text-emerald-500 font-semibold">dynamic, responsive web applications</span> that blend innovation with seamless user experiences. With over{' '}
-            <span className="text-emerald-500 font-semibold">2+ years</span> of expertise, I create products that captivate and engage users, turning ideas into impactful digital solutions.
+            <span className="text-emerald-500 font-semibold">3+ years</span> of expertise, I create products that captivate and engage users, turning ideas into impactful digital solutions.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -230,7 +230,7 @@ const Hero: React.FC = () => {
             className="grid grid-cols-3 gap-4 mt-10"
           >
             {[
-              { label: 'Years Experience', value: '2+' },
+              { label: 'Years Experience', value: '3+' },
               { label: 'Projects Completed', value: '15+' },
               { label: 'Happy Clients', value: '10+' },
             ].map((stat, index) => (

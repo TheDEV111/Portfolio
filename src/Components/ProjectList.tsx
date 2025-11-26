@@ -118,6 +118,121 @@ const ProjectList: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: "MetaFlux",
+      description: "A decentralized crypto expense management platform with budgeting, delegation, and rewards system",
+      longDescription: "MetaFlux is a comprehensive Web3 expense management platform that revolutionizes how individuals and businesses track crypto transactions. Built on the Linea blockchain, it features automated transaction categorization, budget tracking, secure delegation controls, and an innovative NFT rewards system. Users can earn cashback and exclusive NFT badges for responsible financial management while maintaining enterprise-grade security with multi-signature authentication.",
+      tech: ["React", "TypeScript", "Solidity", "Linea", "Metamask", "Verax", "OpenZeppelin"],
+      github: "https://github.com/private",
+      live: "https://meta-flux.vercel.app/",
+      icon: Database,
+      category: "Blockchain",
+      image: "/metaflux.png",
+      features: [
+        "Automated crypto transaction categorization",
+        "Real-time budget monitoring and alerts",
+        "Secure spending delegation with customizable limits",
+        "NFT rewards and cashback system (up to 3%)",
+        "Multi-signature authentication for large transactions",
+        "On-chain transaction records on Linea",
+        "Integration with Metamask, QuickBooks, and Xero",
+        "Enterprise-grade security with Verax identity verification"
+      ],
+      challenges: "Building a decentralized expense tracking system that seamlessly integrates with traditional accounting software while maintaining blockchain security. Implementing a fair and engaging rewards system that incentivizes responsible financial management. Creating an intuitive UX for complex delegation controls and multi-signature transactions.",
+      outcome: "Successfully launched with $240M+ in transaction volume managed, 65K+ active users, 92% budget adherence rate, and $1.2M in rewards distributed. Platform has revolutionized crypto expense management for both individuals and enterprises."
+    },
+    {
+      title: "GameChain",
+      description: "A blockchain-powered trivia gaming platform combining AI, Web3, and community engagement",
+      longDescription: "GameChain revolutionizes the intersection of gaming, learning, and blockchain technology. This decentralized trivia platform leverages AI-powered question generation to create personalized learning experiences while integrating Web3 features for staking rewards, earning tokens, and true ownership of gaming assets. Players can create custom games, host tournaments, compete globally, and earn NFT rewards while transforming knowledge acquisition into an engaging, gamified experience.",
+      tech: ["React", "TypeScript", "Solidity", "Web3", "AI/ML", "Smart Contracts"],
+      github: "https://github.com/private",
+      live: "https://gamechain-client.vercel.app/",
+      icon: Radio,
+      category: "Blockchain",
+      image: "/Gamechain.png",
+      features: [
+        "AI-powered dynamic trivia question generation",
+        "Web3 integration for staking and earning tokens",
+        "Custom game creation with difficulty levels",
+        "NFT rewards and achievement ownership",
+        "Global tournaments and leaderboards",
+        "Community-driven gaming ecosystem",
+        "Learn & Earn gamification model",
+        "Real-time multiplayer gaming experience"
+      ],
+      challenges: "Integrating AI-powered question generation with blockchain technology while maintaining seamless real-time gameplay. Designing a fair reward distribution system that incentivizes both learning and competition. Building a scalable infrastructure to support thousands of concurrent players and tournament hosting.",
+      outcome: "Successfully launched with 1K+ active players, 50+ games created, and 24/7 platform activity. Platform has transformed trivia gaming into a rewarding Web3 experience that combines entertainment, education, and earning opportunities."
+    },
+    {
+      title: "Text2Speech Converter",
+      description: "A web-based text-to-speech converter application with multiple voice options and language support",
+      longDescription: "Text2Speech Converter is a user-friendly web application that transforms written text into natural-sounding speech using Google's Text-to-Speech API. Built with vanilla JavaScript, HTML, and CSS, the application provides an intuitive interface for users to convert any text into audio with customizable voice options, speech rates, and multiple language support. Perfect for accessibility needs, content creation, language learning, and enhancing user experience across various applications.",
+      tech: ["JavaScript", "HTML5", "CSS3", "Google Text-to-Speech API"],
+      github: "https://github.com/Henryno111/Text-to-speech-converter",
+      live: "https://text-to-speech-converter-umber.vercel.app/",
+      icon: Globe,
+      category: "Frontend",
+      image: "/Text2Speech.png",
+      features: [
+        "Real-time text-to-speech conversion",
+        "Multiple voice options and accents",
+        "Adjustable speech rate and pitch",
+        "Multi-language support",
+        "Clean and intuitive user interface",
+        "Cross-browser compatibility",
+        "Responsive design for all devices",
+        "No download required - instant playback"
+      ],
+      challenges: "Integrating Google's Text-to-Speech API seamlessly while ensuring cross-browser compatibility and optimal performance. Designing an intuitive UI that makes voice customization accessible to users of all technical levels. Handling various text formats and special characters to ensure accurate pronunciation.",
+      outcome: "Successfully deployed a fully functional text-to-speech converter that provides natural-sounding voice output with multiple customization options. The application serves as an accessible tool for content creators, educators, and users with accessibility needs."
+    },
+    {
+      title: "Architecture Builder Web App",
+      description: "An interactive web application for creating and visualizing system architecture diagrams using D3.js",
+      longDescription: "Architecture Builder is a powerful web-based tool for designing and visualizing system architecture diagrams. Built with D3.js for dynamic data visualization, this application enables developers, architects, and technical teams to create interactive architectural diagrams with drag-and-drop functionality. Users can add nodes, establish connections, manage relationships, and rearrange components in real-time to design complex system architectures, microservices diagrams, and technical workflows with an intuitive visual interface.",
+      tech: ["JavaScript", "D3.js", "HTML5", "CSS3", "React"],
+      github: "https://github.com/Henryno111/web-app-architecture",
+      live: "https://web-app-architecture.vercel.app/",
+      icon: Code2,
+      category: "Frontend",
+      image: "/architcture-builder-app.png",
+      features: [
+        "Interactive drag-and-drop node positioning",
+        "Dynamic connection management between nodes",
+        "Real-time diagram updates and rendering",
+        "Node and connection selection for editing",
+        "Add, remove, and modify architectural components",
+        "Visual representation of system relationships",
+        "Responsive canvas for complex diagrams",
+        "Export and save diagram configurations"
+      ],
+      challenges: "Implementing smooth drag-and-drop functionality with D3.js while maintaining performance with complex diagrams. Creating an intuitive interface for managing node connections and relationships. Ensuring the visualization scales properly for large-scale system architectures without performance degradation.",
+      outcome: "Successfully deployed an interactive architecture diagram tool that simplifies the process of creating and visualizing system designs. The application provides developers and architects with an efficient way to communicate technical designs and system relationships through visual diagrams."
+    },
+    {
+      title: "Circularity Nexus",
+      description: "Revolutionary waste-to-wealth tokenization platform combining AI verification, blockchain, and DeFi rewards",
+      longDescription: "Circularity Nexus is a groundbreaking blockchain platform that transforms everyday waste into tradeable digital assets. Built on Hedera Hashgraph with AI-powered verification using Groq Llama3-8B, the platform enables users to tokenize recyclable materials through mobile scanning, earn rewards with up to 25% APY through DeFi yield farming, and convert tokens to carbon credits. With 95%+ AI accuracy, support for 50+ waste types, and material-specific multipliers, Circularity Nexus creates a comprehensive circular economy ecosystem that incentivizes sustainable behavior while generating real environmental impact.",
+      tech: ["React", "TypeScript", "Hedera Hashgraph", "Groq AI", "Llama3-8B", "DeFi", "Smart Contracts"],
+      github: "https://github.com/private",
+      live: "https://circularity-nexus.vercel.app/",
+      icon: Blocks,
+      category: "Blockchain",
+      image: "/circularity-nexus.png",
+      features: [
+        "AI-powered waste verification with 95%+ accuracy",
+        "Mobile-first scanning with instant classification",
+        "Support for 50+ waste types with material-specific tokens",
+        "DeFi yield farming with 5-25% APY from corporate ESG partners",
+        "Automatic carbon credit conversion (1kg PET = 1.5kg CO₂)",
+        "Built on Hedera with 10,000 TPS and carbon-negative consensus",
+        "Quality grading system from EXCELLENT to UNUSABLE",
+        "Real-time blockchain tokenization and rewards"
+      ],
+      challenges: "Integrating AI-powered waste verification with blockchain technology while maintaining sub-2 second processing times. Building a fair tokenization model with material-specific multipliers that accurately reflects recycling value. Creating a sustainable DeFi ecosystem that attracts corporate ESG partners and provides meaningful APY returns while ensuring environmental impact.",
+      outcome: "Successfully launched with 2.5M tons of waste recycled, 1.8M CO₂ emissions reduced, 150K active users, and $12M in rewards distributed. Platform operates in 25+ countries and has created measurable environmental impact verified by blockchain technology and third-party auditors."
+    },
+    {
       title: "Black Founders Network",
       description: "A slack-like community platform for founders and investors in America",
       longDescription: "Black Founders Network is a comprehensive community platform designed to connect Black entrepreneurs, founders, and investors across America. Built with real-time communication features, the platform facilitates networking, resource sharing, mentorship opportunities, and collaborative growth. It serves as a digital hub where founders can showcase their startups, seek funding, share insights, and build meaningful connections within the Black entrepreneurship ecosystem.",

@@ -1,4 +1,6 @@
 import { ComponentType, ReactNode } from 'react';
+// Generic icon type compatible with both lucide-react and react-icons
+export type IconComponent = ComponentType<{ className?: string; size?: number | string }>;
 import { LucideProps } from 'lucide-react';
 
 export interface Project {
@@ -7,6 +9,7 @@ export interface Project {
   longDescription: string;
   tech: string[];
   github: string;
+  githubPrivate?: boolean;
   live: string;
   image: string;
   icon?: ComponentType<LucideProps>;
@@ -14,6 +17,7 @@ export interface Project {
   features: string[];
   challenges: string;
   outcome: string;
+  featured?: boolean;
 }
 
 export interface Experience {
@@ -38,7 +42,7 @@ export interface ContactFormData {
 }
 
 export interface SocialLink {
-  icon: ComponentType<LucideProps>;
+  icon: IconComponent;
   href: string;
   label: string;
 }

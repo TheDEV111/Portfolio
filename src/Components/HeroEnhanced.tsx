@@ -1,35 +1,28 @@
 import React, { useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Twitter, Mail, Terminal, Sparkles, Rocket, Zap } from 'lucide-react';
+import { Terminal, Sparkles, Rocket, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import type { SocialLink } from '@/types';
+import { socialLinks } from '@/constants/social';
 
 const Hero: React.FC = () => {
-  const socialLinks: SocialLink[] = [
-    { icon: Github, href: "https://github.com/Henryno111", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/agukwe-henry", label: "LinkedIn" },
-    { icon: Twitter, href: "https://x.com/@boy_gene_us", label: "Twitter" },
-    { icon: Mail, href: "mailto:Henryagukwe01@gmail.com", label: "Email" }
-  ];
-
   const techStack = [
-    { name: "React", icon: "⚛️", color: "from-cyan-500 to-blue-500" },
+    { name: "React.js", icon: "⚛️", color: "from-cyan-500 to-blue-500" },
     { name: "TypeScript", icon: "📘", color: "from-blue-500 to-indigo-500" },
     { name: "Node.js", icon: "🟢", color: "from-green-500 to-emerald-500" },
-    { name: "Python", icon: "🐍", color: "from-yellow-500 to-blue-500" },
-    { name: "MongoDB", icon: "🍃", color: "from-green-600 to-emerald-600" },
-    { name: "Next.js", icon: "▲", color: "from-gray-800 to-gray-600" }
+    { name: "Express.js", icon: "🚀", color: "from-gray-600 to-gray-800" },
+    { name: "PostgreSQL", icon: "🐘", color: "from-blue-600 to-indigo-600" },
+    { name: "Next.js", icon: "▲", color: "from-gray-700 to-gray-500" }
   ];
 
   // Mouse tracking for interactive effects
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   const springX = useSpring(mouseX, { stiffness: 100, damping: 30 });
   const springY = useSpring(mouseY, { stiffness: 100, damping: 30 });
-  
+
   const rotateX = useTransform(springY, [-300, 300], [10, -10]);
   const rotateY = useTransform(springX, [-300, 300], [-10, 10]);
 
@@ -47,7 +40,7 @@ const Hero: React.FC = () => {
 
   // Typing animation effect
   const [typedText, setTypedText] = React.useState('');
-  const roles = ['Full Stack Developer', 'Smart Contract Developer', 'Blockchain Engineer', 'UI/UX Enthusiast'];
+  const roles = ['Full Stack Developer', 'React.js Engineer', 'Node.js Backend Developer', 'UI/UX Enthusiast'];
   const [roleIndex, setRoleIndex] = React.useState(0);
 
   useEffect(() => {
@@ -71,7 +64,7 @@ const Hero: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
@@ -95,7 +88,10 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000,transparent)]" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000,transparent)]"
+      />
 
       <div className="relative z-10 min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 sm:px-8 lg:px-16 py-20">
         {/* Left Panel - Developer Intro */}
@@ -113,7 +109,7 @@ const Hero: React.FC = () => {
             className="mb-6"
           >
             <Badge variant="glow" className="text-sm px-4 py-2">
-              <Sparkles className="w-4 h-4 mr-2" />
+              <Sparkles className="w-4 h-4 mr-2" aria-hidden="true" />
               Welcome to my portfolio
             </Badge>
           </motion.div>
@@ -133,6 +129,7 @@ const Hero: React.FC = () => {
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
                 className="text-emerald-500"
+                aria-hidden="true"
               >
                 .
               </motion.span>
@@ -152,6 +149,7 @@ const Hero: React.FC = () => {
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
                 className="text-emerald-500 ml-1"
+                aria-hidden="true"
               >
                 |
               </motion.span>
@@ -165,8 +163,8 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.7 }}
             className="text-lg text-gray-400 mb-8 leading-relaxed"
           >
-            I design <span className="text-emerald-500 font-semibold">dynamic, responsive web applications</span> that blend innovation with seamless user experiences. With over{' '}
-            <span className="text-emerald-500 font-semibold">3+ years</span> of expertise, I create products that captivate and engage users, turning ideas into impactful digital solutions.
+            Mid-Level Full Stack Developer building <span className="text-emerald-500 font-semibold">scalable web applications and APIs</span> with React.js and Node.js. With{' '}
+            <span className="text-emerald-500 font-semibold">3+ years</span> of experience in frontend development, backend services, and database integration — turning ideas into production-ready digital products.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -182,7 +180,7 @@ const Hero: React.FC = () => {
                 variant="glow"
                 className="group w-full sm:w-auto"
               >
-                <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                 View My Work
               </Button>
             </Link>
@@ -191,9 +189,12 @@ const Hero: React.FC = () => {
               size="lg"
               variant="outline"
               className="group w-full sm:w-auto"
+              asChild
             >
-              <Terminal className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              Download Resume
+              <a href="/Frontend_resume.pdf" download aria-label="Download resume PDF">
+                <Terminal className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                Download Resume
+              </a>
             </Button>
           </motion.div>
 
@@ -210,6 +211,7 @@ const Hero: React.FC = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={social.label}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -217,7 +219,7 @@ const Hero: React.FC = () => {
                 transition={{ delay: 1.2 + index * 0.1 }}
                 className="w-12 h-12 rounded-xl glass-effect flex items-center justify-center text-gray-400 hover:text-emerald-500 hover:border-emerald-500 border-2 border-transparent transition-all duration-300"
               >
-                <social.icon className="w-5 h-5" />
+                <social.icon className="w-5 h-5" aria-hidden="true" />
               </motion.a>
             ))}
           </motion.div>
@@ -227,7 +229,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 }}
-            className="grid grid-cols-3 gap-4 mt-10"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10"
           >
             {[
               { label: 'Years Experience', value: '3+' },
@@ -258,10 +260,7 @@ const Hero: React.FC = () => {
           style={{ perspective: '1000px' }}
         >
           <motion.div
-            style={{
-              rotateX,
-              rotateY,
-            }}
+            style={{ rotateX, rotateY }}
             className="relative"
           >
             {/* Floating Tech Cards */}
@@ -280,16 +279,18 @@ const Hero: React.FC = () => {
                   className="card-hover"
                 >
                   <div className={`glass-effect p-6 rounded-2xl border-2 border-gray-800 hover:border-emerald-500 transition-all duration-300 bg-gradient-to-br ${tech.color} bg-opacity-10`}>
-                    <div className="text-4xl mb-3">{tech.icon}</div>
+                    <div className="text-4xl mb-3" aria-hidden="true">{tech.icon}</div>
                     <h3 className="text-white font-mono text-sm mb-1">
                       {`<${tech.name} />`}
                     </h3>
-                    <div className="w-full bg-gray-700 rounded-full h-1 mt-3">
+                    {/* scaleX instead of width to avoid layout recalculation */}
+                    <div className="w-full bg-gray-700 rounded-full h-1 mt-3 overflow-hidden">
                       <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: '85%' }}
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
                         transition={{ delay: 1 + index * 0.1, duration: 1 }}
-                        className="bg-emerald-500 h-1 rounded-full"
+                        style={{ originX: 0 }}
+                        className="bg-emerald-500 h-1 rounded-full w-[85%]"
                       />
                     </div>
                   </div>
@@ -309,6 +310,7 @@ const Hero: React.FC = () => {
                 ease: "easeInOut",
               }}
               className="absolute -bottom-10 right-0 glass-effect p-4 rounded-lg max-w-xs hidden lg:block"
+              aria-hidden="true"
             >
               <div className="flex items-center gap-2 mb-2">
                 <Zap className="w-4 h-4 text-emerald-500" />
@@ -328,6 +330,7 @@ const Hero: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        aria-hidden="true"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

@@ -6,38 +6,46 @@ import type { Experience, Education } from '@/types';
 const AboutSection: React.FC = () => {
   const experiences: Experience[] = [
     {
-      title: "Frontend Developer Intern",
+      title: "Co-Founder & Lead Software Engineer",
+      company: "TruthChain (Remote)",
+      period: "Sep 2025 – Present",
+      description: "Designing and building scalable full stack applications using React.js and Node.js. Built backend services and RESTful APIs, implemented authentication systems, integrated blockchain APIs, and led architecture decisions and code reviews in an Agile environment."
+    },
+    {
+      title: "Full Stack Engineer",
+      company: "HitoAI (Remote)",
+      period: "2024 – 2025",
+      description: "Developed responsive web applications using React.js and Next.js. Built and maintained backend APIs with Node.js, integrated RESTful services, automated workflows reducing manual processes by 30%, and contributed to AWS-based infrastructure."
+    },
+    {
+      title: "Software Engineer Intern",
       company: "Sharperly NG",
-      period: "2024",
-      description: "Contributed to web application development, introduced to Nextjs app router and redesigned SVG assets."
-    },
-    {
-      title: "Full Stack Developer",
-      company: "HitoAI",
-      period: "2024 - Present",
-      description: "Developed and maintained web applications using React, Node.js, Firebase and MongoDB. Implemented responsive designs."
-    },
-    {
-      title: "Smart Contract Developer",
-      company: "Freelance",
-      period: "2024 - Present",
-      description: "Built and audited smart contracts for DeFi protocols. Implemented secure and gas-efficient solutions using Clarity and Solidity."
+      period: "Jun 2023 – Dec 2023",
+      description: "Built reusable frontend components using React and Tailwind CSS. Integrated backend APIs, translated UI/UX designs into responsive interfaces, assisted in debugging and testing, and worked within Agile sprint cycles."
     }
   ];
 
   const education: Education[] = [
     {
-      degree: "Computer Science",
-      institution: "University of Nigeria, Nsukka",
-      period: "2021 - Present",
-      description: "Currently pursuing a Bachelor's degree in Computer Science with a focus on software engineering and data structures."
+      degree: "B.Sc. Computer Science",
+      institution: "National Open University of Nigeria",
+      period: "2019 – 2024",
+      description: "Bachelor's degree in Computer Science with a focus on software engineering, data structures, and algorithms."
+    },
+    {
+      degree: "ALX Software Engineering Program",
+      institution: "ALX Africa",
+      period: "2023 – 2024",
+      description: "Intensive software engineering programme covering full stack development, system design, and professional engineering practices."
     }
   ];
 
   const skills = [
-    "JavaScript/TypeScript", "React.js", "Node.js", "Python",
-    "MongoDB", "PostgreSQL", "Firebase", "Solidity",
-    "Clarity", "Git/GitHub", "Docker", "AWS"
+    "JavaScript", "TypeScript", "React.js", "Next.js",
+    "Node.js", "Express.js", "Python", "Go",
+    "C++", "Clarity", "MongoDB", "PostgreSQL",
+    "MySQL", "AWS", "Docker", "CI/CD",
+    "Git", "Tailwind CSS", "Jira"
   ];
 
   const containerVariants = {
@@ -76,8 +84,8 @@ const AboutSection: React.FC = () => {
             </h1>
           </div>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate full-stack developer with a strong foundation in modern web technologies 
-            and blockchain development. I love creating innovative solutions that make a real impact.
+            Mid-Level Full Stack Developer with 3+ years of experience building scalable web
+            applications and APIs. I love creating high-performance products that solve real problems.
           </p>
         </motion.div>
 
@@ -91,18 +99,20 @@ const AboutSection: React.FC = () => {
             </div>
             <div className="bg-gray-900/50 p-6 rounded-lg border border-gray-800">
               <p className="text-gray-300 leading-relaxed mb-4">
-                My journey into software development began during my university years, where I discovered 
-                my passion for creating digital solutions. What started as curiosity about how websites work 
-                has evolved into a full-fledged career in full-stack development.
+                My journey into software development started during my university years, where curiosity
+                about how digital products are built grew into a full-fledged career. Over 3+ years I've
+                gone from writing my first components to co-founding a tech company and leading
+                engineering teams.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                I specialize in React ecosystem, Node.js backend development, and have recently expanded 
-                into blockchain development with Solidity and Clarity smart contracts. I'm always eager 
-                to learn new technologies and tackle challenging problems.
+                I specialise in the React and Node.js ecosystem — building responsive frontends,
+                scalable REST APIs, and integrating third-party services. I've shipped production
+                applications across healthcare, community platforms, e-commerce, and blockchain,
+                always with a focus on performance and clean code.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, contributing to open source 
-                projects, or sharing knowledge with the developer community.
+                When I'm not coding, I'm exploring new technologies, contributing to open source,
+                or sharing knowledge with the developer community.
               </p>
             </div>
           </motion.div>
@@ -190,11 +200,11 @@ const AboutSection: React.FC = () => {
           <div className="bg-gray-900/50 p-6 rounded-lg border border-gray-800">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-500 mb-2">2+</div>
+                <div className="text-3xl font-bold text-emerald-500 mb-2">3+</div>
                 <p className="text-gray-400">Years of Experience</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-500 mb-2">10+</div>
+                <div className="text-3xl font-bold text-emerald-500 mb-2">15+</div>
                 <p className="text-gray-400">Projects Completed</p>
               </div>
               <div className="text-center">

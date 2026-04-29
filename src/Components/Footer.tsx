@@ -10,7 +10,7 @@ const navLinks = [
 ];
 
 const Footer: React.FC = () => (
-  <footer className="bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800">
+  <footer className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-800">
     <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 py-12">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand */}
@@ -50,7 +50,7 @@ const Footer: React.FC = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 hover:bg-gray-700 transition-all duration-300"
+                className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 hover:bg-zinc-700 transition-all duration-300"
               >
                 <social.icon className="w-5 h-5" aria-hidden="true" />
               </a>
@@ -59,7 +59,7 @@ const Footer: React.FC = () => (
         </div>
       </div>
 
-      <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+      <div className="border-t border-zinc-800 mt-8 pt-8 text-center">
         <p className="text-gray-400 text-sm">
           © {new Date().getFullYear()} Henry Agukwe. All rights reserved.
         </p>

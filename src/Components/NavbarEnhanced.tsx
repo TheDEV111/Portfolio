@@ -35,7 +35,7 @@ const NavbarEnhanced: React.FC = () => {
       transition={{ duration: 0.6, type: "spring" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900/95 backdrop-blur-lg shadow-lg border-b border-gray-800"
+          ? "bg-zinc-900/95 backdrop-blur-lg shadow-lg border-b border-zinc-800"
           : "bg-transparent"
       }`}
     >
@@ -113,7 +113,7 @@ const NavbarEnhanced: React.FC = () => {
                         className={`absolute inset-0 rounded-xl ${
                           isActive
                             ? "bg-emerald-500/20"
-                            : "bg-gray-800/50"
+                            : "bg-zinc-800/50"
                         }`}
                         initial={{ scale: 0, opacity: 0 }}
                         whileHover={{ scale: 1, opacity: 1 }}
@@ -202,7 +202,7 @@ const NavbarEnhanced: React.FC = () => {
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
                 exit={{ y: -20 }}
-                className="px-2 pt-2 pb-4 space-y-2 glass-effect rounded-2xl mt-4 border border-gray-800"
+                className="px-2 pt-2 pb-4 space-y-2 glass-effect rounded-2xl mt-4 border border-zinc-800"
               >
                 {navLinks.map((link, index) => (
                   <motion.div
@@ -220,7 +220,7 @@ const NavbarEnhanced: React.FC = () => {
                         ${
                           isActive
                             ? "text-emerald-500 bg-emerald-500/20 border-2 border-emerald-500/50"
-                            : "text-gray-300 hover:text-white hover:bg-gray-800/50"
+                            : "text-gray-300 hover:text-white hover:bg-zinc-800/50"
                         }`
                       }
                     >

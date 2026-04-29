@@ -6,14 +6,18 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { featuredProjects } from '@/data/projects';
+import { projects } from '@/data/projects';
+
+const homeProjects = projects
+  .filter(p => (p.category === 'Full Stack' || p.category === 'Frontend') && !p.contribution)
+  .slice(0, 4);
 
 const ProjectsSection: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 py-20 px-6 sm:px-8 lg:px-16 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 py-20 px-6 sm:px-8 lg:px-16 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <motion.div style={{ y }} className="absolute inset-0">
@@ -74,16 +78,17 @@ const ProjectsSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-gray-400 text-lg max-w-3xl mx-auto mb-10"
           >
-            Explore my latest work showcasing expertise in{' '}
-            <span className="text-emerald-500 font-semibold">full-stack development</span>,{' '}
-            <span className="text-emerald-500 font-semibold">blockchain technology</span>, and{' '}
-            <span className="text-emerald-500 font-semibold">modern web applications</span>
+            A selection of my{' '}
+            <span className="text-emerald-500 font-semibold">full-stack</span>{' '}
+            and{' '}
+            <span className="text-emerald-500 font-semibold">frontend</span>{' '}
+            work — visit the projects page for blockchain, DeFi, and open source contributions.
           </motion.p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {featuredProjects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+          {homeProjects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
@@ -91,7 +96,7 @@ const ProjectsSection: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="group relative overflow-hidden border-2 border-gray-800 hover:border-emerald-500 transition-all duration-500 bg-gray-900/50 backdrop-blur-sm card-hover h-full">
+              <Card className="group relative overflow-hidden border-2 border-zinc-800 hover:border-emerald-500 transition-all duration-500 bg-zinc-900/50 backdrop-blur-sm card-hover h-full">
                 {/* Shine Effect */}
                 <motion.div
                   aria-hidden="true"
@@ -114,7 +119,7 @@ const ProjectsSection: React.FC = () => {
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
 
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
@@ -206,14 +211,14 @@ const ProjectsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center glass-effect p-10 rounded-2xl border-2 border-gray-800"
+          className="text-center glass-effect p-10 rounded-2xl border-2 border-zinc-800"
         >
           <Sparkles className="w-12 h-12 text-emerald-500 mx-auto mb-4" aria-hidden="true" />
           <h3 className="text-2xl font-bold text-white mb-4">
-            Want to see more amazing projects?
+            Blockchain, DeFi & Open Source work
           </h3>
           <p className="text-gray-400 mb-6 max-w-xl mx-auto">
-            Explore my complete portfolio featuring diverse projects across web development, blockchain, and more.
+            See the full picture — DeFi protocols, Stellar/Soroban dApps, ZK systems, and open source contributions.
           </p>
           <Link to="/projects">
             <Button variant="glow" size="lg" className="group">

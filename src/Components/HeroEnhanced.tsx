@@ -1,46 +1,20 @@
 import React, { useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Terminal, Sparkles, Rocket, Zap } from 'lucide-react';
+import { Terminal, Sparkles, Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { socialLinks } from '@/constants/social';
+import profileImage from '@/Assets/imageProfile.JPG';
 
 const Hero: React.FC = () => {
-  const techStack = [
-    { name: "React.js", icon: "⚛️", color: "from-cyan-500 to-blue-500" },
-    { name: "TypeScript", icon: "📘", color: "from-blue-500 to-indigo-500" },
-    { name: "Node.js", icon: "🟢", color: "from-green-500 to-emerald-500" },
-    { name: "Express.js", icon: "🚀", color: "from-gray-600 to-gray-800" },
-    { name: "PostgreSQL", icon: "🐘", color: "from-blue-600 to-indigo-600" },
-    { name: "Next.js", icon: "▲", color: "from-gray-700 to-gray-500" }
-  ];
-
-  // Mouse tracking for interactive effects
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springX = useSpring(mouseX, { stiffness: 100, damping: 30 });
-  const springY = useSpring(mouseY, { stiffness: 100, damping: 30 });
-
-  const rotateX = useTransform(springY, [-300, 300], [10, -10]);
-  const rotateY = useTransform(springX, [-300, 300], [-10, 10]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      mouseX.set(clientX - innerWidth / 2);
-      mouseY.set(clientY - innerHeight / 2);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mouseX, mouseY]);
-
-  // Typing animation effect
   const [typedText, setTypedText] = React.useState('');
-  const roles = ['Full Stack Developer', 'React.js Engineer', 'Node.js Backend Developer', 'UI/UX Enthusiast'];
+  const roles = [
+    'Full Stack Developer',
+    'Blockchain Engineer',
+    'DeFi Builder',
+    'Open Source Contributor',
+  ];
   const [roleIndex, setRoleIndex] = React.useState(0);
 
   useEffect(() => {
@@ -62,93 +36,75 @@ const Hero: React.FC = () => {
   }, [roleIndex]);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-emerald-500/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Grid pattern overlay */}
+    <div className="relative min-h-screen bg-zinc-950 overflow-hidden">
+      {/* Subtle grid overlay */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000,transparent)]"
+        className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000,transparent)]"
       />
 
-      <div className="relative z-10 min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 sm:px-8 lg:px-16 py-20">
-        {/* Left Panel - Developer Intro */}
+      {/* Minimal ambient glow */}
+      <div
+        aria-hidden="true"
+        className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"
+      />
+
+      <div className="relative z-10 min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 sm:px-8 lg:px-20 gap-16 py-24">
+
+        {/* Left — Text content */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full lg:w-1/2 max-w-2xl"
+          transition={{ duration: 0.7 }}
+          className="w-full lg:w-1/2 max-w-xl"
         >
-          {/* Welcome Badge */}
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.15 }}
             className="mb-6"
           >
             <Badge variant="glow" className="text-sm px-4 py-2">
               <Sparkles className="w-4 h-4 mr-2" aria-hidden="true" />
-              Welcome to my portfolio
+              Available for projects
             </Badge>
           </motion.div>
 
-          {/* Main Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight tracking-tight"
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
-              Hi, I'm{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 glow-text">
-                Henry
-              </span>
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="text-emerald-500"
-                aria-hidden="true"
-              >
-                .
-              </motion.span>
-            </h1>
-          </motion.div>
+            Hi, I'm{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              Henry
+            </span>
+            <motion.span
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 1, repeat: Infinity }}
+              className="text-emerald-500"
+              aria-hidden="true"
+            >
+              .
+            </motion.span>
+          </motion.h1>
 
-          {/* Typed Role */}
+          {/* Typed role */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
             className="mb-6"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-300 font-semibold min-h-[2.5rem]">
-              <span className="text-emerald-500">{typedText}</span>
+            <h2 className="text-2xl sm:text-3xl text-gray-300 font-semibold min-h-[2.5rem]">
+              <span className="text-emerald-400">{typedText}</span>
               <motion.span
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
-                className="text-emerald-500 ml-1"
+                className="text-emerald-400 ml-0.5"
                 aria-hidden="true"
               >
                 |
@@ -160,50 +116,61 @@ const Hero: React.FC = () => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-            className="text-lg text-gray-400 mb-8 leading-relaxed"
+            transition={{ delay: 0.55 }}
+            className="text-base text-gray-400 mb-8 leading-relaxed"
           >
-            Mid-Level Full Stack Developer building <span className="text-emerald-500 font-semibold">scalable web applications and APIs</span> with React.js and Node.js. With{' '}
-            <span className="text-emerald-500 font-semibold">3+ years</span> of experience in frontend development, backend services, and database integration — turning ideas into production-ready digital products.
+            I build{' '}
+            <span className="text-emerald-400 font-medium">full-stack products</span>{' '}
+            and{' '}
+            <span className="text-emerald-400 font-medium">on-chain systems</span>{' '}
+            — from DeFi protocols and content provenance platforms on Stellar & Stacks,
+            to scalable web apps with React, Next.js, Node.js and Go.
+            I offer{' '}
+            <span className="text-white font-medium">end-to-end product builds</span>,{' '}
+            <span className="text-white font-medium">smart contract auditing</span>, and{' '}
+            <span className="text-white font-medium">blockchain consulting</span>.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-4 mb-10"
+            transition={{ delay: 0.7 }}
+            className="flex flex-col sm:flex-row gap-3 mb-10"
           >
             <Link to="/projects">
-              <Button
-                size="lg"
-                variant="glow"
-                className="group w-full sm:w-auto"
-              >
-                <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
+              <Button size="lg" variant="glow" className="group w-full sm:w-auto">
+                <Rocket className="w-4 h-4 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                 View My Work
+              </Button>
+            </Link>
+
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="group w-full sm:w-auto">
+                Hire Me
+                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
             </Link>
 
             <Button
               size="lg"
-              variant="outline"
-              className="group w-full sm:w-auto"
+              variant="ghost"
+              className="group w-full sm:w-auto text-gray-400 hover:text-white"
               asChild
             >
               <a href="/Frontend_resume.pdf" download aria-label="Download resume PDF">
-                <Terminal className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
-                Download Resume
+                <Terminal className="w-4 h-4 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                Resume
               </a>
             </Button>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social links */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.1 }}
-            className="flex gap-4"
+            transition={{ delay: 0.85 }}
+            className="flex gap-3 mb-10"
           >
             {socialLinks.map((social, index) => (
               <motion.a
@@ -212,143 +179,101 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + index * 0.1 }}
-                className="w-12 h-12 rounded-xl glass-effect flex items-center justify-center text-gray-400 hover:text-emerald-500 hover:border-emerald-500 border-2 border-transparent transition-all duration-300"
+                transition={{ delay: 0.9 + index * 0.08 }}
+                className="w-10 h-10 rounded-lg glass-effect flex items-center justify-center text-gray-500 hover:text-emerald-400 border border-zinc-800 hover:border-emerald-500/50 transition-all duration-200"
               >
-                <social.icon className="w-5 h-5" aria-hidden="true" />
+                <social.icon className="w-4 h-4" aria-hidden="true" />
               </motion.a>
             ))}
           </motion.div>
 
           {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10"
+            transition={{ delay: 1 }}
+            className="grid grid-cols-3 gap-4"
           >
             {[
               { label: 'Years Experience', value: '3+' },
-              { label: 'Projects Completed', value: '15+' },
-              { label: 'Happy Clients', value: '10+' },
+              { label: 'GitHub Repos', value: '110+' },
+              { label: 'Hackathons Won', value: '2' },
             ].map((stat, index) => (
-              <div key={index} className="glass-effect p-4 rounded-lg text-center">
+              <div key={index} className="text-center py-3 border border-zinc-800 rounded-lg bg-zinc-900/40">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 1.5 + index * 0.1, type: 'spring' }}
-                  className="text-2xl font-bold text-emerald-500 mb-1"
+                  transition={{ delay: 1.1 + index * 0.1, type: 'spring' }}
+                  className="text-xl font-bold text-emerald-400 mb-0.5"
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-xs text-gray-400">{stat.label}</div>
+                <div className="text-xs text-gray-500">{stat.label}</div>
               </div>
             ))}
           </motion.div>
         </motion.div>
 
-        {/* Right Panel - Interactive Tech Stack */}
+        {/* Right — Profile image */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-full lg:w-1/2 mt-16 lg:mt-0"
-          style={{ perspective: '1000px' }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="w-full lg:w-auto flex justify-center"
         >
-          <motion.div
-            style={{ rotateX, rotateY }}
-            className="relative"
-          >
-            {/* Floating Tech Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-xl mx-auto">
-              {techStack.map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.8 + index * 0.1,
-                    type: 'spring',
-                    stiffness: 100,
-                  }}
-                  whileHover={{ scale: 1.1, zIndex: 10 }}
-                  className="card-hover"
-                >
-                  <div className={`glass-effect p-6 rounded-2xl border-2 border-gray-800 hover:border-emerald-500 transition-all duration-300 bg-gradient-to-br ${tech.color} bg-opacity-10`}>
-                    <div className="text-4xl mb-3" aria-hidden="true">{tech.icon}</div>
-                    <h3 className="text-white font-mono text-sm mb-1">
-                      {`<${tech.name} />`}
-                    </h3>
-                    {/* scaleX instead of width to avoid layout recalculation */}
-                    <div className="w-full bg-gray-700 rounded-full h-1 mt-3 overflow-hidden">
-                      <motion.div
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ delay: 1 + index * 0.1, duration: 1 }}
-                        style={{ originX: 0 }}
-                        className="bg-emerald-500 h-1 rounded-full w-[85%]"
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+          <div className="relative">
+            {/* Outer glow ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              className="absolute -inset-1 rounded-full bg-gradient-to-r from-emerald-500/40 via-cyan-500/20 to-emerald-500/40 blur-sm"
+              aria-hidden="true"
+            />
+
+            {/* Static ring border */}
+            <div className="absolute -inset-0.5 rounded-full border border-emerald-500/30" aria-hidden="true" />
+
+            {/* Image */}
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-zinc-800">
+              <img
+                src={profileImage}
+                alt="Henry Agukwe — Full Stack & Blockchain Developer"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
 
-            {/* Floating Code Snippet */}
+            {/* Floating status pill */}
             <motion.div
-              animate={{
-                y: [-10, 10, -10],
-                rotate: [-1, 1, -1],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute -bottom-10 right-0 glass-effect p-4 rounded-lg max-w-xs hidden lg:block"
-              aria-hidden="true"
+              animate={{ y: [-4, 4, -4] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass-effect px-4 py-2 rounded-full border border-emerald-500/30 flex items-center gap-2"
             >
-              <div className="flex items-center gap-2 mb-2">
-                <Zap className="w-4 h-4 text-emerald-500" />
-                <span className="text-emerald-500 font-mono text-xs">Latest Achievement</span>
-              </div>
-              <p className="text-gray-300 text-sm">
-                Built a real-time blockchain platform with 1000+ active users
-              </p>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
+              <span className="text-xs text-gray-300 font-medium whitespace-nowrap">Open to work</span>
             </motion.div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
         aria-hidden="true"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="text-emerald-500"
+          className="text-gray-700"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </motion.div>
       </motion.div>

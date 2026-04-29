@@ -13,7 +13,7 @@ const buttonVariants = cva(
         outline:
           "border-2 border-emerald-500 text-emerald-500 bg-transparent hover:bg-emerald-500 hover:text-gray-900",
         secondary:
-          "bg-gray-800 text-gray-300 hover:bg-gray-700",
+          "bg-zinc-800 text-gray-300 hover:bg-zinc-700",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-emerald-500 underline-offset-4 hover:underline",
         glow: "bg-emerald-500 text-gray-900 hover:bg-emerald-400 animate-glow",

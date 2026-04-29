@@ -1,0 +1,1 @@
+const i={hidden:{opacity:0},visible:{opacity:1,transition:{staggerChildren:.2}}},t={hidden:{opacity:0,y:20},visible:{opacity:1,y:0,transition:{duration:.6}}},a={y:[-10,10,-10],transition:{duration:3,repeat:1/0,repeatType:"reverse",ease:"easeInOut"}};export{i as c,a as f,t as i};

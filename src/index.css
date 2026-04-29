@@ -9,11 +9,11 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
+    --background: 240 5% 3.9%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 240 5% 3.9%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 240 5% 3.9%;
     --popover-foreground: 210 40% 98%;
     --primary: 142.1 76.2% 36.3%;
     --primary-foreground: 355.7 100% 97.3%;
@@ -47,7 +47,7 @@
 
 @layer utilities {
   .glass-effect {
-    background: rgba(17, 24, 39, 0.7);
+    background: rgba(9, 9, 11, 0.75);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(16, 185, 129, 0.1);

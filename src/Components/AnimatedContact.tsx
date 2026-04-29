@@ -76,7 +76,7 @@ const AnimatedContact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 p-6 sm:p-8 lg:p-16 relative overflow-hidden">
+    <div className="min-h-screen bg-zinc-950 p-6 sm:p-8 lg:p-16 relative overflow-hidden">
       {/* Background animations */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         {[...Array(5)].map((_, i) => (
@@ -138,9 +138,9 @@ const AnimatedContact: React.FC = () => {
                 className="absolute inset-0 bg-emerald-500/10 rounded-lg blur-xl group-hover:bg-emerald-500/20 transition-colors duration-300"
                 animate={floatingAnimation}
               />
-              <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-lg p-8 relative hover:border-emerald-500 transition-colors duration-300">
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-lg p-8 relative hover:border-emerald-500 transition-colors duration-300">
                 <motion.div
-                  className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-emerald-500/20 transition-colors duration-300"
+                  className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-emerald-500/20 transition-colors duration-300"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                   aria-hidden="true"
@@ -157,7 +157,7 @@ const AnimatedContact: React.FC = () => {
         {/* Contact Form */}
         <motion.div
           variants={itemVariants}
-          className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 border border-gray-800 relative overflow-hidden"
+          className="bg-zinc-900/80 backdrop-blur-sm rounded-xl p-8 border border-zinc-800 relative overflow-hidden"
         >
           {/* Rotating gradient background — using opacity layers instead of animating background */}
           <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
@@ -189,8 +189,8 @@ const AnimatedContact: React.FC = () => {
                     required
                     aria-describedby={errors.name ? "name-error" : undefined}
                     aria-invalid={!!errors.name}
-                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 ${
-                      errors.name ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-emerald-500'
+                    className={`w-full px-4 py-3 bg-zinc-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 ${
+                      errors.name ? 'border-red-500 focus:border-red-500' : 'border-zinc-700 focus:border-emerald-500'
                     }`}
                     placeholder="Your Name"
                   />
@@ -213,8 +213,8 @@ const AnimatedContact: React.FC = () => {
                     required
                     aria-describedby={errors.email ? "email-error" : undefined}
                     aria-invalid={!!errors.email}
-                    className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 ${
-                      errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-emerald-500'
+                    className={`w-full px-4 py-3 bg-zinc-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 ${
+                      errors.email ? 'border-red-500 focus:border-red-500' : 'border-zinc-700 focus:border-emerald-500'
                     }`}
                     placeholder="your.email@example.com"
                   />
@@ -238,8 +238,8 @@ const AnimatedContact: React.FC = () => {
                   required
                   aria-describedby={errors.subject ? "subject-error" : undefined}
                   aria-invalid={!!errors.subject}
-                  className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 ${
-                    errors.subject ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-emerald-500'
+                  className={`w-full px-4 py-3 bg-zinc-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 ${
+                    errors.subject ? 'border-red-500 focus:border-red-500' : 'border-zinc-700 focus:border-emerald-500'
                   }`}
                   placeholder="Project Discussion"
                 />
@@ -261,8 +261,8 @@ const AnimatedContact: React.FC = () => {
                   rows={6}
                   aria-describedby={errors.message ? "message-error" : undefined}
                   aria-invalid={!!errors.message}
-                  className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 resize-none ${
-                    errors.message ? 'border-red-500 focus:border-red-500' : 'border-gray-700 focus:border-emerald-500'
+                  className={`w-full px-4 py-3 bg-zinc-800 border rounded-lg text-white focus:ring-2 focus:ring-emerald-500/20 transition-all duration-300 resize-none ${
+                    errors.message ? 'border-red-500 focus:border-red-500' : 'border-zinc-700 focus:border-emerald-500'
                   }`}
                   placeholder="Tell me about your project..."
                 />
@@ -325,7 +325,7 @@ const AnimatedContact: React.FC = () => {
                 aria-label={social.label}
                 variants={itemVariants}
                 whileHover={{ scale: 1.1, rotate: 360, transition: { duration: 0.6 } }}
-                className="w-12 h-12 border-2 border-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 hover:border-emerald-500 transition-colors duration-300 relative group"
+                className="w-12 h-12 border-2 border-zinc-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 hover:border-emerald-500 transition-colors duration-300 relative group"
               >
                 <motion.div
                   aria-hidden="true"

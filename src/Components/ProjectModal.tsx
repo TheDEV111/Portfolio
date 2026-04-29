@@ -22,7 +22,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-gray-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-800"
+        className="bg-zinc-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-zinc-800"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-6">
@@ -66,7 +66,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-gray-800 text-emerald-500 px-3 py-1 rounded-full text-sm"
+                    className="bg-zinc-800 text-emerald-500 px-3 py-1 rounded-full text-sm"
                   >
                     {tech}
                   </span>
@@ -92,7 +92,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                   rel="noopener noreferrer"
                   aria-label={`View ${project.title} source code on GitHub`}
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 bg-gray-800 text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-300"
+                  className="flex items-center gap-2 bg-zinc-800 text-gray-300 px-4 py-2 rounded-lg hover:bg-zinc-700 transition-colors duration-300"
                 >
                   <FaGithub className="w-5 h-5" aria-hidden="true" />
                   View Code

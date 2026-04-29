@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: index * 0.1 }}
     whileHover={{ y: -5 }}
-    className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-emerald-500 transition-all duration-300 cursor-pointer"
+    className="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-emerald-500 transition-all duration-300 cursor-pointer"
     onClick={() => onSelect(project)}
     role="button"
     tabIndex={0}
@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
         decoding="async"
         className="w-full h-48 object-cover"
       />
-      <div className="absolute inset-0 bg-gray-900/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+      <div className="absolute inset-0 bg-zinc-900/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
         <div className="bg-emerald-500 text-gray-900 px-4 py-2 rounded-lg font-semibold">
           View Details
         </div>
@@ -39,11 +39,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
     </div>
 
     <div className="p-6">
-      <div className="flex items-center gap-2 mb-2">
+      <div className="flex items-center gap-2 mb-2 flex-wrap">
         {project.icon && <project.icon className="w-5 h-5 text-emerald-500" aria-hidden="true" />}
-        <span className="bg-gray-800 text-emerald-500 px-2 py-1 rounded text-xs font-medium">
+        <span className="bg-zinc-800 text-emerald-500 px-2 py-1 rounded text-xs font-medium">
           {project.category}
         </span>
+        {project.contribution && (
+          <span className="bg-violet-500/15 text-violet-400 border border-violet-500/30 px-2 py-1 rounded text-xs font-medium">
+            Open Source Contributor
+          </span>
+        )}
       </div>
 
       <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
@@ -53,13 +58,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
         {project.tech.slice(0, 3).map((tech) => (
           <span
             key={tech}
-            className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs"
+            className="bg-zinc-800 text-gray-300 px-2 py-1 rounded text-xs"
           >
             {tech}
           </span>
         ))}
         {project.tech.length > 3 && (
-          <span className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">
+          <span className="bg-zinc-800 text-gray-300 px-2 py-1 rounded text-xs">
             +{project.tech.length - 3} more
           </span>
         )}
@@ -74,7 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
             aria-label={`View ${project.title} source code on GitHub`}
             whileHover={{ scale: 1.05 }}
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-2 bg-gray-800 text-gray-300 px-3 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-300 text-sm"
+            className="flex items-center gap-2 bg-zinc-800 text-gray-300 px-3 py-2 rounded-lg hover:bg-zinc-700 transition-colors duration-300 text-sm"
           >
             <FaGithub className="w-4 h-4" aria-hidden="true" />
             Code

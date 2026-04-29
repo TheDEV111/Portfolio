@@ -9,7 +9,7 @@ const Contact = lazy(() => import('./Pages/Contact'));
 
 // Loading component
 const LoadingSpinner: React.FC = () => (
-  <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+  <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
     <div className="relative">
       <div className="w-16 h-16 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin"></div>
       <div className="absolute inset-0 flex items-center justify-center">

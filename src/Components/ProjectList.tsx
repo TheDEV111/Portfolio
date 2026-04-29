@@ -7,7 +7,7 @@ import ProjectCard from '@/Components/ProjectCard';
 import ProjectModal from '@/Components/ProjectModal';
 import type { Project } from '@/types';
 
-const categories = ['All', 'Full Stack', 'Blockchain', 'Backend', 'Frontend'];
+const categories = ['All', 'Full Stack', 'Blockchain', 'Frontend', 'Open Source'];
 
 const ProjectList: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -19,7 +19,7 @@ const ProjectList: React.FC = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gray-950 p-6 sm:p-8 lg:p-16 relative overflow-hidden">
+    <div className="min-h-screen bg-zinc-950 p-6 sm:p-8 lg:p-16 relative overflow-hidden">
       {/* Background animations */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         {[...Array(5)].map((_, i) => (
@@ -84,7 +84,7 @@ const ProjectList: React.FC = () => {
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                   activeCategory === category
                     ? 'bg-emerald-500 text-gray-900'
-                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                    : 'bg-zinc-800 text-gray-300 hover:bg-zinc-700'
                 }`}
               >
                 {category}
@@ -93,7 +93,7 @@ const ProjectList: React.FC = () => {
           </div>
 
           {/* Layout Toggle */}
-          <div className="flex items-center gap-2 bg-gray-800 rounded-lg p-1" role="group" aria-label="Toggle layout">
+          <div className="flex items-center gap-2 bg-zinc-800 rounded-lg p-1" role="group" aria-label="Toggle layout">
             <motion.button
               whileHover={{ scale: 1.05 }}
               onClick={() => setLayout('grid')}
@@ -134,7 +134,7 @@ const ProjectList: React.FC = () => {
 
         {/* Skills Section */}
         <motion.div
-          className="bg-gray-900/50 rounded-xl p-8 border border-gray-800"
+          className="bg-zinc-900/50 rounded-xl p-8 border border-zinc-800"
           variants={itemVariants}
         >
           <div className="text-center mb-8">
@@ -149,7 +149,7 @@ const ProjectList: React.FC = () => {
                 <motion.div
                   key={skill}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-emerald-500 transition-colors duration-300"
+                  className="bg-zinc-800 p-4 rounded-lg border border-zinc-700 hover:border-emerald-500 transition-colors duration-300"
                 >
                   <h3 className="text-emerald-500 font-mono text-sm text-center">{`<${skill} />`}</h3>
                 </motion.div>

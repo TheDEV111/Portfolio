@@ -14,6 +14,7 @@ export interface Project {
   image: string;
   icon?: ComponentType<LucideProps>;
   category: string;
+  contribution?: boolean;
   features: string[];
   challenges: string;
   outcome: string;

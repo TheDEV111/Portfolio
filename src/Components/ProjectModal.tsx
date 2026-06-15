@@ -37,13 +37,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             </button>
           </div>
 
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-            decoding="async"
-            className="w-full rounded-lg mb-6 object-cover"
-          />
+          {project.image && (
+            <img
+              src={project.image}
+              alt={project.title}
+              loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                // Hide gracefully for projects without a screenshot
+                e.currentTarget.style.display = 'none';
+              }}
+              className="w-full rounded-lg mb-6 object-cover"
+            />
+          )}
 
           <div className="space-y-6">
             <div>

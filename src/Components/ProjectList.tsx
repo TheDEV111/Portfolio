@@ -4,6 +4,7 @@ import { LayoutGrid, LayoutList } from 'lucide-react';
 import { projects } from '@/data/projects';
 import { containerVariants, itemVariants } from '@/constants/animations';
 import ProjectCard from '@/Components/ProjectCard';
+import OpenSourceCard from '@/Components/OpenSourceCard';
 import ProjectModal from '@/Components/ProjectModal';
 import type { Project } from '@/types';
 
@@ -122,14 +123,23 @@ const ProjectList: React.FC = () => {
           }`}
           variants={containerVariants}
         >
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={index}
-              onSelect={setSelectedProject}
-            />
-          ))}
+          {filteredProjects.map((project, index) =>
+            project.contribution ? (
+              <OpenSourceCard
+                key={project.title}
+                project={project}
+                index={index}
+                onSelect={setSelectedProject}
+              />
+            ) : (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={index}
+                onSelect={setSelectedProject}
+              />
+            )
+          )}
         </motion.div>
 
         {/* Skills Section */}

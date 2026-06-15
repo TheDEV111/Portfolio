@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ImageOff } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import type { Project } from '@/types';
 
@@ -10,7 +10,11 @@ interface ProjectCardProps {
   onSelect: (project: Project) => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) => (
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) => {
+  const [imageError, setImageError] = useState(false);
+  const hasImage = Boolean(project.image) && !imageError;
+
+  return (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -24,13 +28,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
     onKeyDown={(e) => e.key === 'Enter' && onSelect(project)}
   >
     <div className="relative overflow-hidden">
-      <img
-        src={project.image}
-        alt={project.title}
-        loading="lazy"
-        decoding="async"
-        className="w-full h-48 object-cover"
-      />
+      {hasImage ? (
+        <img
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+          decoding="async"
+          onError={() => setImageError(true)}
+          className="w-full h-48 object-cover"
+        />
+      ) : (
+        // Fallback for projects without a screenshot
+        <div className="w-full h-48 bg-gradient-to-br from-zinc-800 via-zinc-900 to-zinc-800 flex flex-col items-center justify-center gap-3">
+          {project.icon ? (
+            <project.icon className="w-12 h-12 text-emerald-500/70" aria-hidden="true" />
+          ) : (
+            <ImageOff className="w-12 h-12 text-emerald-500/70" aria-hidden="true" />
+          )}
+          <span className="text-gray-400 text-sm font-medium">{project.title}</span>
+        </div>
+      )}
       <div className="absolute inset-0 bg-zinc-900/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
         <div className="bg-emerald-500 text-gray-900 px-4 py-2 rounded-lg font-semibold">
           View Details
@@ -100,6 +117,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onSelect }) =
       </div>
     </div>
   </motion.div>
-);
+  );
+};
 
 export default ProjectCard;

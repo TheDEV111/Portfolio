@@ -1,7 +1,54 @@
-import { Database, Radio, Blocks, Code2, Globe, Shield, Cpu, Layers } from 'lucide-react';
+import { Database, Radio, Blocks, Code2, Globe, Shield, Cpu, Layers, Gamepad2, Bot } from 'lucide-react';
 import type { Project } from '@/types';
 
 export const projects: Project[] = [
+  {
+    title: "Metagent Finance",
+    description: "Autonomous agent-to-agent treasury — a CIO AI agent produces trade intents, ERC-7710 sub-delegations narrow them, and a Swap Agent executes gas-abstracted trades on Base with no human in the loop",
+    longDescription: "Metagent Finance is an autonomous A2A (Agent-to-Agent) algorithmic treasury syndicate on Base. A human grants a master USDC budget once via an ERC-20 periodic advanced permission (wallet_grantPermissions). From there a CIO Agent (Venice AI / Llama 3.3 70B) analyses market conditions and outputs strict JSON trade intents. The backend cryptographically narrows each intent into an ERC-7710 sub-delegation — binding it to a one-time burner key with caveats that enforce the exact amount and router — and a Swap Agent executes the trade through a gas-abstracted 1Shot relayer. No further human intervention is required.",
+    tech: ["Next.js 14", "TypeScript", "wagmi v3", "viem v2", "Venice AI / Llama 3.3 70B", "ERC-7710", "MetaMask Smart Accounts", "Supabase", "Prisma", "Node.js / Express", "Base"],
+    github: "https://github.com/TheDEV111/Metagent-Finance",
+    live: "https://metagent-finance.kairos-devs.com/",
+    image: "/Metagent.png",
+    icon: Bot,
+    category: "Full Stack",
+    featured: true,
+    features: [
+      "One-time USDC budget grant via ERC-20 periodic advanced permission (wallet_grantPermissions)",
+      "CIO Agent (Venice AI / Llama 3.3 70B) generates structured JSON trade intents",
+      "ERC-7710 sub-delegation narrows master permission to a one-time burner key",
+      "Caveat builder enforces exact trade amount and router address",
+      "Swap Agent executes gas-abstracted trades via the 1Shot relayer on Base",
+      "Real-time trade status via Supabase subscriptions and 1Shot webhooks",
+      "Express + Prisma backend orchestrating the agent pipeline"
+    ],
+    challenges: "Designing a trustless A2A delegation flow where a master permission can be cryptographically narrowed to a disposable burner key with strict caveats — so an autonomous Swap Agent can trade without ever holding custody or exceeding the granted budget. Coordinating two AI agents, an ERC-7710 delegation layer, and a gas-abstracted relayer into a single deterministic execution pipeline.",
+    outcome: "Built for the Venice AI Agent Hackathon — a working autonomous treasury that takes a single USDC permission grant and runs AI-driven, human-out-of-the-loop trades on Base Mainnet through ERC-7710 sub-delegation and gas-abstracted execution."
+  },
+  {
+    title: "Stacks Card Game",
+    description: "Provably fair on-chain card game on Stacks — stake STX, pick a card, and a Clarity contract resolves the outcome via block VRF with instant 2× payouts",
+    longDescription: "Stacks Card Game is a provably fair, fully on-chain card game built on the Stacks blockchain. Players connect a wallet, pick a card (Spades, Hearts, or Diamonds), and stake STX. A Clarity smart contract draws the result using the block VRF seed — there is no backend and no house manipulation. A match pays out 2× the stake in the same transaction resolution; a miss leaves the stake with the contract. The app ships as a full Progressive Web App with offline support, an offline STX transaction queue, push notifications, background sync, and battery/network-aware behaviour.",
+    tech: ["React", "Vite", "JavaScript", "Tailwind CSS", "Clarity", "Stacks Blockchain", "@stacks/connect", "PWA"],
+    github: "https://github.com/TheDEV111/Card-Simulation",
+    live: "https://stacks-card-game.kairos-devs.com/",
+    image: "/stacks-card-game.png",
+    icon: Gamepad2,
+    category: "Frontend",
+    featured: true,
+    features: [
+      "Provably fair outcomes resolved on-chain via block VRF — no backend",
+      "Instant 2× payout to winners in the same transaction resolution",
+      "Flexible stakes from 0.001 up to 1 STX per round",
+      "Per-address 2-block cooldown to prevent rapid-fire abuse",
+      "Leather and Xverse wallet integration — no accounts or email",
+      "Full PWA: installable, offline support, and push notifications",
+      "Offline STX transaction queue with background-sync replay",
+      "Battery- and network-aware polling and animations"
+    ],
+    challenges: "Building a card game whose fairness is fully verifiable on-chain by resolving outcomes from the block VRF seed inside a Clarity contract, with no server in the loop. Engineering a hand-authored service worker with named cache stores and an offline STX transaction queue that broadcasts queued plays automatically once connectivity returns.",
+    outcome: "Live on Stacks mainnet (contract SPQG93AEB9GACWCPZ92Z6FB440HX1CNP4ADT8S0X.card-game) — a provably fair, installable PWA card game with instant on-chain payouts and full offline support."
+  },
   {
     title: "STXWorx",
     description: "Stacks freelance marketplace — fund projects in escrow, release milestones on-chain, resolve disputes via admin moderation",

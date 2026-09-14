@@ -30,16 +30,16 @@ const NavbarEnhanced: React.FC = () => {
         scrolled ? "bg-black/90 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-14 bg-zinc-900/80 rounded-full px-6 border border-zinc-800 backdrop-blur-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14 bg-zinc-900/80 rounded-full px-3 sm:px-6 border border-zinc-800 backdrop-blur-lg">
           
           {/* Left: Menu Toggle & Socials */}
           <div className="flex items-center space-x-6 flex-1">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center space-x-2 text-white hover:text-brand transition-colors font-sans text-sm tracking-widest font-semibold uppercase"
+              className="flex items-center space-x-2 text-white hover:text-brand transition-colors font-sans text-xs sm:text-sm tracking-widest font-semibold uppercase"
             >
-              <span>MENU</span>
+              <span className="hidden sm:inline">MENU</span>
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
             <div className="hidden lg:flex items-center space-x-4 text-zinc-400">
@@ -64,7 +64,7 @@ const NavbarEnhanced: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-brand text-black font-sans font-bold text-sm tracking-widest uppercase px-6 py-2.5 rounded-full hover:bg-brand-light transition-colors"
+                className="bg-brand text-black font-sans font-bold text-xs sm:text-sm tracking-widest uppercase px-4 py-2 sm:px-6 sm:py-2.5 rounded-full hover:bg-brand-light transition-colors whitespace-nowrap"
               >
                 Let's Talk
               </motion.button>

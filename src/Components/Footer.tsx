@@ -1,71 +1,62 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { socialLinks } from '@/constants/social';
+import { motion } from 'framer-motion';
 
-const navLinks = [
-  { name: "Home", to: "/" },
-  { name: "Projects", to: "/projects" },
-  { name: "About", to: "/about" },
-  { name: "Contact", to: "/contact" }
-];
-
-const Footer: React.FC = () => (
-  <footer className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-800">
-    <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Brand */}
-        <div className="space-y-4">
-          <h3 className="text-xl font-bold text-white">Henry Agukwe</h3>
-          <p className="text-gray-400 text-sm">
-            Full Stack Developer passionate about creating innovative digital solutions
-            and exploring the possibilities of blockchain technology.
-          </p>
-        </div>
-
-        {/* Navigation */}
-        <div className="space-y-4">
-          <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-          <ul className="space-y-2">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  to={link.to}
-                  className="text-gray-400 hover:text-emerald-500 transition-colors duration-300 text-sm"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Social Links */}
-        <div className="space-y-4">
-          <h4 className="text-lg font-semibold text-white">Connect</h4>
-          <div className="flex space-x-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 hover:bg-zinc-700 transition-all duration-300"
-              >
-                <social.icon className="w-5 h-5" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-zinc-800 mt-8 pt-8 text-center">
-        <p className="text-gray-400 text-sm">
-          © {new Date().getFullYear()} Henry Agukwe. All rights reserved.
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-black pt-32 pb-12 border-t border-zinc-900">
+      
+      {/* Pre-Footer CTA */}
+      <div className="max-w-4xl mx-auto text-center px-6 mb-24">
+        <h2 className="font-display text-5xl md:text-7xl uppercase tracking-tighter text-white mb-6">
+          YOUR TURN TO <span className="text-brand">SPEAK</span>
+        </h2>
+        <p className="font-sans text-zinc-400 text-sm md:text-base uppercase tracking-widest font-semibold mb-10 max-w-lg mx-auto leading-relaxed">
+          GET IN TOUCH FOR FULL STACK DEVELOPMENT, SMART CONTRACT AUDITS, OR TO DISCUSS YOUR NEXT BIG IDEA.
         </p>
+        <Link to="/contact">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-brand text-black font-sans font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-full hover:bg-white transition-colors"
+          >
+            Let's Talk
+          </motion.button>
+        </Link>
       </div>
-    </div>
-  </footer>
-);
+
+      {/* Massive Typographic Footer Logo */}
+      <div className="w-full overflow-hidden flex justify-center border-b border-zinc-900 pb-12 mb-12 select-none">
+        <h1 className="font-display text-[25vw] leading-[0.75] text-white tracking-tighter text-center">
+          HENRY
+        </h1>
+      </div>
+
+      {/* Footer Links & Copyright */}
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+        
+        {/* Left Column (Nav) */}
+        <div className="flex flex-col space-y-4 font-sans text-xs uppercase tracking-widest font-bold text-zinc-500">
+          <Link to="/about" className="hover:text-brand transition-colors">About</Link>
+          <Link to="/projects" className="hover:text-brand transition-colors">Projects</Link>
+          <Link to="/contact" className="hover:text-brand transition-colors">Contact</Link>
+        </div>
+
+        {/* Center Column (Copyright & Legal placeholder) */}
+        <div className="flex flex-col items-center justify-center space-y-4 font-sans text-xs uppercase tracking-widest font-bold text-zinc-500">
+          <p>© {new Date().getFullYear()} Henry Agukwe. All Rights Reserved.</p>
+        </div>
+
+        {/* Right Column (Socials) */}
+        <div className="flex flex-col space-y-4 font-sans text-xs uppercase tracking-widest font-bold text-zinc-500 md:items-end">
+          <a href="https://github.com/TheDEV111" target="_blank" rel="noreferrer" className="hover:text-brand transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/henry-agukwe" target="_blank" rel="noreferrer" className="hover:text-brand transition-colors">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-brand transition-colors">Twitter</a>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

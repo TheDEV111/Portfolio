@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { BookOpen, Award, Briefcase, GraduationCap, Code2, Brain } from 'lucide-react';
+
+import { Award } from 'lucide-react';
 import type { Experience, Education } from '@/types';
 
 const AboutSection: React.FC = () => {
@@ -59,89 +59,51 @@ const AboutSection: React.FC = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <div className="min-h-screen bg-zinc-950 py-16 px-6 sm:px-8 lg:px-16">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="max-w-6xl mx-auto"
-      >
+    <div className="min-h-screen bg-black pt-32 pb-20 px-6 sm:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        
         {/* Header */}
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Brain className="text-emerald-500 w-7 h-7" />
-            <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
-              About Me<span className="text-emerald-500">.</span>
+        <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-zinc-900 pb-12">
+          <div>
+            <h1 className="font-display text-6xl md:text-8xl uppercase tracking-tighter text-white leading-none">
+              ABOUT<br />
+              <span className="text-brand">HENRY</span>
             </h1>
           </div>
-          <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">
-            Full Stack Developer and Blockchain Engineer with 3+ years building production-grade
-            web applications and on-chain systems. I specialise in{' '}
-            <span className="text-emerald-400 font-medium">DeFi protocols</span>,{' '}
-            <span className="text-emerald-400 font-medium">content provenance on-chain</span>, and{' '}
-            <span className="text-emerald-400 font-medium">end-to-end product engineering</span>.
+          <p className="font-sans text-zinc-400 max-w-lg uppercase text-sm tracking-widest font-semibold leading-relaxed">
+            FULL STACK DEVELOPER AND BLOCKCHAIN ENGINEER WITH 3+ YEARS BUILDING PRODUCTION-GRADE WEB APPLICATIONS AND ON-CHAIN SYSTEMS.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Journey + Skills */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-14">
-          {/* My Journey */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="text-emerald-500 w-5 h-5" />
-              <h2 className="text-xl font-bold text-white">My Journey</h2>
-            </div>
-            <div className="bg-zinc-900/40 p-6 rounded-xl border border-zinc-800 space-y-4">
-              <p className="text-gray-300 leading-relaxed text-sm">
-                My path into software started at university, where curiosity about how digital
-                products are built grew into a career. Over 3+ years I moved from writing first
-                components to co-founding a tech company and leading engineering teams.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+          
+          {/* Journey */}
+          <div>
+            <h2 className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-8">My Journey</h2>
+            <div className="space-y-6 font-sans text-zinc-300 text-lg leading-relaxed">
+              <p>
+                My path into software started at university, where curiosity about how digital products are built grew into a career. Over 3+ years I moved from writing first components to co-founding a tech company and leading engineering teams.
               </p>
-              <p className="text-gray-300 leading-relaxed text-sm">
-                I went deep into blockchain when I discovered Stellar and Soroban — building
-                DeFi escrow markets, token launchpads, ZK privacy systems, and content provenance
-                infrastructure on-chain. Winning the{' '}
-                <span className="text-emerald-400 font-medium">MetaMask Dev-Cook Hackathon</span>{' '}
-                and the{' '}
-                <span className="text-emerald-400 font-medium">Stacks Build Battle</span>{' '}
-                validated that direction.
+              <p>
+                I went deep into blockchain when I discovered Stellar and Soroban — building DeFi escrow markets, token launchpads, ZK privacy systems, and content provenance infrastructure on-chain. Winning the <span className="text-brand">MetaMask Dev-Cook Hackathon</span> and the <span className="text-brand">Stacks Build Battle</span> validated that direction.
               </p>
-              <p className="text-gray-300 leading-relaxed text-sm">
-                Today I offer full product builds — from smart contracts and APIs to polished
-                frontends — plus consulting and auditing for teams building in Web3.
+              <p>
+                Today I offer full product builds — from smart contracts and APIs to polished frontends — plus consulting and auditing for teams building in Web3.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Technical Skills */}
-          <motion.div variants={itemVariants} className="space-y-4">
-            <div className="flex items-center gap-2 mb-4">
-              <Code2 className="text-emerald-500 w-5 h-5" />
-              <h2 className="text-xl font-bold text-white">Technical Skills</h2>
-            </div>
-            <div className="bg-zinc-900/40 p-6 rounded-xl border border-zinc-800 space-y-5">
+          <div>
+            <h2 className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-8">Technical Arsenal</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {skillGroups.map((group) => (
-                <div key={group.label}>
-                  <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-2">
-                    {group.label}
-                  </p>
+                <div key={group.label} className="border-l-2 border-zinc-800 pl-6">
+                  <h3 className="font-sans text-white text-sm uppercase tracking-widest font-bold mb-4">{group.label}</h3>
                   <div className="flex flex-wrap gap-2">
                     {group.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full font-medium"
-                      >
+                      <span key={skill} className="text-xs text-zinc-400 font-medium font-sans uppercase tracking-wider bg-zinc-900 px-3 py-1">
                         {skill}
                       </span>
                     ))}
@@ -149,125 +111,69 @@ const AboutSection: React.FC = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
-        </div>
-
-        {/* Experience */}
-        <div className="mb-12">
-          <div className="flex items-center gap-2 mb-6">
-            <Briefcase className="text-emerald-500 w-5 h-5" />
-            <h3 className="text-xl font-bold text-white">Experience</h3>
-          </div>
-          <div className="space-y-4">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-                className="bg-zinc-900/40 p-5 rounded-xl border border-zinc-800 hover:border-emerald-500/40 transition-colors duration-300"
-              >
-                <h4 className="text-emerald-400 font-semibold">{exp.title}</h4>
-                <p className="text-gray-300 text-sm">{exp.company}</p>
-                <p className="text-gray-600 text-xs mb-3">{exp.period}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{exp.description}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
 
-        {/* Education */}
-        <div className="mb-12">
-          <div className="flex items-center gap-2 mb-6">
-            <GraduationCap className="text-emerald-500 w-5 h-5" />
-            <h3 className="text-xl font-bold text-white">Education</h3>
-          </div>
-          <div className="space-y-4">
-            {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="bg-zinc-900/40 p-5 rounded-xl border border-zinc-800 hover:border-emerald-500/40 transition-colors duration-300"
-              >
-                <h4 className="text-emerald-400 font-semibold">{edu.degree}</h4>
-                <p className="text-gray-300 text-sm">{edu.institution}</p>
-                <p className="text-gray-600 text-xs mb-3">{edu.period}</p>
-                <p className="text-gray-400 text-sm leading-relaxed">{edu.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Achievements */}
-        <motion.div variants={itemVariants}>
-          <div className="flex items-center gap-2 mb-6">
-            <Award className="text-emerald-500 w-5 h-5" />
-            <h3 className="text-xl font-bold text-white">Achievements</h3>
-          </div>
-          <div className="bg-zinc-900/40 p-6 rounded-xl border border-zinc-800">
-            <div className="grid grid-cols-3 gap-4 mb-8">
-              {[
-                { value: '3+', label: 'Years Experience' },
-                { value: '110+', label: 'GitHub Repos' },
-                { value: '100%', label: 'Client Satisfaction' },
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-3xl font-bold text-emerald-400 mb-1">{stat.value}</div>
-                  <p className="text-gray-500 text-sm">{stat.label}</p>
+        {/* Experience & Education Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 border-t border-zinc-900 pt-24">
+          
+          {/* Experience */}
+          <div>
+            <h2 className="font-display text-5xl uppercase tracking-tighter text-white mb-12">Experience</h2>
+            <div className="space-y-12">
+              {experiences.map((exp, index) => (
+                <div key={index} className="group border-l-4 border-zinc-800 hover:border-brand pl-8 transition-colors duration-300">
+                  <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-2">{exp.period}</p>
+                  <h3 className="font-display text-3xl uppercase tracking-tighter text-white mb-1">{exp.title}</h3>
+                  <p className="font-sans text-zinc-500 font-semibold mb-4">{exp.company}</p>
+                  <p className="font-sans text-zinc-400 leading-relaxed text-sm">{exp.description}</p>
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="border-t border-zinc-800 pt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="bg-zinc-800/40 p-5 rounded-xl border border-zinc-700 hover:border-emerald-500/40 transition-colors duration-300"
-              >
-                <div className="flex items-start gap-3">
-                  <Award className="text-emerald-400 w-5 h-5 mt-0.5 shrink-0" />
+          {/* Education & Achievements */}
+          <div className="space-y-24">
+            <div>
+              <h2 className="font-display text-5xl uppercase tracking-tighter text-white mb-12">Education</h2>
+              <div className="space-y-12">
+                {education.map((edu, index) => (
+                  <div key={index} className="group border-l-4 border-zinc-800 hover:border-brand pl-8 transition-colors duration-300">
+                    <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-2">{edu.period}</p>
+                    <h3 className="font-display text-3xl uppercase tracking-tighter text-white mb-1">{edu.degree}</h3>
+                    <p className="font-sans text-zinc-500 font-semibold mb-4">{edu.institution}</p>
+                    <p className="font-sans text-zinc-400 leading-relaxed text-sm">{edu.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="font-display text-5xl uppercase tracking-tighter text-white mb-12">Awards</h2>
+              <div className="space-y-8">
+                <div className="bg-zinc-900/50 p-8 border border-zinc-800 flex gap-6 hover:border-brand transition-colors duration-300">
+                  <Award className="w-8 h-8 text-brand shrink-0" />
                   <div>
-                    <h4 className="text-white font-semibold text-sm mb-1">
-                      MetaMask Developer Hackathon Winner
-                    </h4>
-                    <p className="text-emerald-400 text-xs mb-2">Dev-Cook — April 2025</p>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      Recognised as the winning developer at the MetaMask Dev-Cook hackathon,
-                      delivering an innovative solution within the MetaMask developer platform
-                      against top Web3 builders.
-                    </p>
+                    <h4 className="font-display text-2xl uppercase tracking-tighter text-white mb-2">MetaMask Hackathon Winner</h4>
+                    <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-4">Dev-Cook — April 2025</p>
+                    <p className="font-sans text-zinc-400 text-sm leading-relaxed">Recognised as the winning developer at the MetaMask Dev-Cook hackathon, delivering an innovative solution within the MetaMask developer platform.</p>
                   </div>
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="bg-zinc-800/40 p-5 rounded-xl border border-zinc-700 hover:border-emerald-500/40 transition-colors duration-300"
-              >
-                <div className="flex items-start gap-3">
-                  <Award className="text-emerald-400 w-5 h-5 mt-0.5 shrink-0" />
+                <div className="bg-zinc-900/50 p-8 border border-zinc-800 flex gap-6 hover:border-brand transition-colors duration-300">
+                  <Award className="w-8 h-8 text-brand shrink-0" />
                   <div>
-                    <h4 className="text-white font-semibold text-sm mb-1">
-                      Stacks Blockchain Build Battle Winner
-                    </h4>
-                    <p className="text-emerald-400 text-xs mb-2">February 2025</p>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      Took first place at the Stacks Blockchain Build Battle, demonstrating
-                      strong proficiency in Bitcoin-layer smart contract development and
-                      delivering a high-impact dApp on the Stacks network.
-                    </p>
+                    <h4 className="font-display text-2xl uppercase tracking-tighter text-white mb-2">Stacks Build Battle Winner</h4>
+                    <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-4">February 2025</p>
+                    <p className="font-sans text-zinc-400 text-sm leading-relaxed">Took first place at the Stacks Blockchain Build Battle, demonstrating strong proficiency in Bitcoin-layer smart contract development.</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+
+        </div>
+
+      </div>
     </div>
   );
 };

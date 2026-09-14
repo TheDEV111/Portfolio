@@ -5,14 +5,12 @@ import ProjectList from '@/Components/ProjectList';
 
 const Projects: React.FC = () => {
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-black'>
       <NavbarEnhanced />
-      <main className='pt-16 min-h-screen'>
+      <main className='pt-0 min-h-screen'>
         <ProjectList />
       </main>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

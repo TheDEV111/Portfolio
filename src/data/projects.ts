@@ -34,7 +34,7 @@ export const projects: Project[] = [
     live: "https://stacks-card-game.kairos-devs.com/",
     image: "/stacks-card-game.png",
     icon: Gamepad2,
-    category: "Frontend",
+    category: "Blockchain",
     featured: true,
     features: [
       "Provably fair outcomes resolved on-chain via block VRF — no backend",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     live: "",
     image: "/pop-predict.png",
     icon: Radio,
-    category: "Open Source",
+    category: "Blockchain",
     contribution: true,
     featured: true,
     features: [
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     live: "",
     image: "/marketx.png",
     icon: Shield,
-    category: "Open Source",
+    category: "Blockchain",
     contribution: true,
     featured: true,
     features: [
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     live: "",
     image: "/nova-launch.png",
     icon: Layers,
-    category: "Open Source",
+    category: "Blockchain",
     contribution: true,
     featured: true,
     features: [
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     live: "",
     image: "/alien-gateway.png",
     icon: Shield,
-    category: "Open Source",
+    category: "Blockchain",
     contribution: true,
     featured: true,
     features: [
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     live: "",
     image: "/sorotask.png",
     icon: Cpu,
-    category: "Open Source",
+    category: "Blockchain",
     contribution: true,
     featured: true,
     features: [
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     live: "",
     image: "/hintents.png",
     icon: Code2,
-    category: "Open Source",
+    category: "Blockchain",
     contribution: true,
     featured: false,
     features: [
@@ -548,6 +548,71 @@ export const projects: Project[] = [
     ],
     challenges: "Implementing dynamic content, smooth animations, and SEO optimization for a polished developer portfolio.",
     outcome: "Improved SEO ranking and user engagement with a polished, performant portfolio site."
+  }
+,
+
+  {
+    title: "Trackpool",
+    description: "A DeFi analytics dashboard and tracking platform",
+    longDescription: "Trackpool is a decentralized finance tracking application that allows users to monitor their liquidity pools and staking positions across various protocols in real time.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Web3.js"],
+    github: "",
+    githubPrivate: true,
+    live: "https://trackpool-five.vercel.app/",
+    image: "",
+    icon: Blocks,
+    category: "Blockchain",
+    featured: true,
+    features: [
+      "Real-time liquidity pool tracking",
+      "Staking position monitoring",
+      "Protocol analytics and metrics",
+      "Wallet integration"
+    ],
+    challenges: "Aggregating live data from multiple protocols efficiently.",
+    outcome: "A functional dashboard providing real-time insights for DeFi users."
+  },
+  {
+    title: "Clarinet Auditor",
+    description: "A smart contract auditing tool for Stacks/Clarity developers",
+    longDescription: "Clarinet Auditor is a developer tool designed for the Stacks ecosystem. It integrates with Clarinet to analyze Clarity smart contracts, identify potential vulnerabilities, and generate comprehensive audit reports.",
+    tech: ["React", "TypeScript", "Clarity", "Stacks"],
+    github: "",
+    githubPrivate: true,
+    live: "https://clarinet-auditor.vercel.app/",
+    image: "",
+    icon: Shield,
+    category: "Blockchain",
+    featured: true,
+    features: [
+      "Static analysis of Clarity smart contracts",
+      "Vulnerability detection",
+      "Audit report generation",
+      "Integration with Clarinet environment"
+    ],
+    challenges: "Building an accurate parser for Clarity syntax and identifying complex vulnerability patterns.",
+    outcome: "An essential tool for Stacks developers to ensure smart contract security."
+  },
+  {
+    title: "IT Alliance Portfolio",
+    description: "A modern corporate portfolio and agency website",
+    longDescription: "IT Alliance Portfolio is a professional agency website showcasing technical services, client projects, and company information. Built with a focus on high performance, accessibility, and modern design principles.",
+    tech: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    github: "",
+    githubPrivate: true,
+    live: "https://it-alliance-portfolio.vercel.app/",
+    image: "",
+    icon: Globe,
+    category: "Frontend",
+    featured: true,
+    features: [
+      "Responsive and modern UI design",
+      "Service and project showcases",
+      "Interactive animations",
+      "Contact and lead generation forms"
+    ],
+    challenges: "Designing a high-performance site with complex animations that doesn't compromise load speed.",
+    outcome: "A polished corporate web presence for IT Alliance."
   }
 ];
 

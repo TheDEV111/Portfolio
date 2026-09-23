@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative z-20 text-center flex flex-col items-center px-4"
       >
-        <h2 className="text-white font-sans text-2xl sm:text-3xl md:text-4xl italic font-light mb-[-10px] sm:mb-[-20px] z-30">
+        <h2 className="text-white font-sans text-2xl sm:text-3xl md:text-4xl italic font-light mb-4 sm:mb-6 z-30">
           Hello, I'm
         </h2>
         <h1 className="font-display text-[15vw] sm:text-[12vw] leading-none text-brand uppercase tracking-tight text-center drop-shadow-2xl">

@@ -15,10 +15,81 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Henry Agukwe - Portfolio</title>
+    <style>
+      /* Pre-rendered loading state */
+      body {
+        margin: 0;
+        background-color: #000000;
+      }
+      #prerender-loader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
+      .prerender-logo {
+        font-family: 'Anton', sans-serif;
+        font-size: 5rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        display: flex;
+        align-items: center;
+      }
+      .prerender-logo span {
+        color: #22d3ee;
+      }
+      .prerender-dots {
+        margin-top: 2rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+      .prerender-dot {
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: #22d3ee;
+        border-radius: 50%;
+        animation: bounce 1s infinite;
+      }
+      .prerender-dot:nth-child(1) { animation-delay: 0ms; }
+      .prerender-dot:nth-child(2) { animation-delay: 150ms; }
+      .prerender-dot:nth-child(3) { animation-delay: 300ms; }
+
+      @media (min-width: 768px) {
+        .prerender-logo { font-size: 8rem; }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .5; }
+      }
+      @keyframes bounce {
+        0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+        50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pre-rendered DOM that shows instantly before React hydrates -->
+      <div id="prerender-loader">
+        <div class="prerender-logo">H<span>A</span></div>
+        <div class="prerender-dots">
+          <div class="prerender-dot"></div>
+          <div class="prerender-dot"></div>
+          <div class="prerender-dot"></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

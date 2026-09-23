@@ -3,6 +3,29 @@ import type { Project } from '@/types';
 
 export const projects: Project[] = [
   {
+    title: "LexiLead",
+    description: "The operating system for Nigerian legal practice — unifying firm workspaces, client portals, billing, and AI document review",
+    longDescription: "LexiLead is a comprehensive legal practice management platform tailored specifically for the Nigerian jurisdiction. It combines a secure multi-tenant backoffice for lawyers with an interactive PWA client portal. Key features include Naira-based billing (Paystack & direct transfer), NDPR-compliant role-based access, and Lexi AI—a powerful tool that analyzes contracts and surfaces relevant Nigerian case law precedents instantly.",
+    tech: ["React", "TypeScript", "Node.js", "AI/ML", "Paystack", "PWA"],
+    github: "",
+    githubPrivate: true,
+    live: "https://lexilead.com/",
+    image: "",
+    icon: Shield,
+    category: "Full Stack",
+    featured: true,
+    features: [
+      "Secure multi-tenant workspace with schema-level isolation",
+      "Collaborative Client Portal (PWA) with real-time milestones",
+      "Lexi AI for contract analysis and Nigerian case law surfacing",
+      "Naira billing, custom invoices, and automated time capture",
+      "NDPR Compliant with role-based access and audit trails",
+      "Court calendaring and task delegation tracking"
+    ],
+    challenges: "Architecting a secure multi-tenant environment with strict data isolation for privileged legal information, and integrating a localized AI that accurately references Nigerian legal precedents.",
+    outcome: "A production-ready legal OS actively onboarding Nigerian law firms, modernizing their backoffice and client experiences."
+  },
+  {
     title: "Metagent Finance",
     description: "Autonomous agent-to-agent treasury — a CIO AI agent produces trade intents, ERC-7710 sub-delegations narrow them, and a Swap Agent executes gas-abstracted trades on Base with no human in the loop",
     longDescription: "Metagent Finance is an autonomous A2A (Agent-to-Agent) algorithmic treasury syndicate on Base. A human grants a master USDC budget once via an ERC-20 periodic advanced permission (wallet_grantPermissions). From there a CIO Agent (Venice AI / Llama 3.3 70B) analyses market conditions and outputs strict JSON trade intents. The backend cryptographically narrows each intent into an ERC-7710 sub-delegation — binding it to a one-time burner key with caveats that enforce the exact amount and router — and a Swap Agent executes the trade through a gas-abstracted 1Shot relayer. No further human intervention is required.",

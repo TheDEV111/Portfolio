@@ -1,16 +1,23 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import profileImage from '@/Assets/imageProfile.JPG';
 import { Globe, Code2 } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const { scrollY } = useScroll();
+  const textY = useTransform(scrollY, [0, 500], [0, 200]);
+  const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const circlesY = useTransform(scrollY, [0, 500], [0, 100]);
+
   return (
     <div className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center pt-32 pb-20">
       
       {/* Abstract Concentric Circles Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-zinc-900 rounded-full opacity-50" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-zinc-800 rounded-full opacity-50" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-zinc-700 rounded-full opacity-50" />
+      <motion.div style={{ y: circlesY }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-zinc-900 rounded-full opacity-50" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-zinc-800 rounded-full opacity-50" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-zinc-700 rounded-full opacity-50" />
+      </motion.div>
       
       {/* Background Crosshairs */}
       <div className="absolute top-0 bottom-0 left-1/2 w-px bg-zinc-900 opacity-50" />
@@ -44,6 +51,7 @@ const Hero: React.FC = () => {
 
       {/* Massive Typography */}
       <motion.div 
+        style={{ y: textY, opacity: textOpacity }}
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}

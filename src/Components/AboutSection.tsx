@@ -114,63 +114,72 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Experience & Education Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 border-t border-zinc-900 pt-24">
-          
-          {/* Experience */}
-          <div>
-            <h2 className="font-display text-5xl uppercase tracking-tighter text-white mb-12">Experience</h2>
-            <div className="space-y-12">
-              {experiences.map((exp, index) => (
-                <div key={index} className="group border-l-4 border-zinc-800 hover:border-brand pl-8 transition-colors duration-300">
-                  <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-2">{exp.period}</p>
-                  <h3 className="font-display text-3xl uppercase tracking-tighter text-white mb-1">{exp.title}</h3>
-                  <p className="font-sans text-zinc-500 font-semibold mb-4">{exp.company}</p>
-                  <p className="font-sans text-zinc-400 leading-relaxed text-sm">{exp.description}</p>
-                </div>
-              ))}
+        {/* Experience Sticky Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-32 border-t border-zinc-900 pt-24 relative">
+          <div className="lg:w-1/3">
+            <div className="sticky top-32">
+              <h2 className="font-display text-5xl md:text-7xl uppercase tracking-tighter text-white mb-6">Experience</h2>
+              <p className="font-sans text-zinc-500 uppercase tracking-widest text-xs font-bold leading-relaxed">
+                3+ YEARS OF PROFESSIONAL EXPERIENCE BUILDING SCALABLE SYSTEMS AND LEADING ENGINEERING TEAMS.
+              </p>
             </div>
           </div>
+          <div className="lg:w-2/3 space-y-16">
+            {experiences.map((exp, index) => (
+              <div key={index} className="group border-l-4 border-zinc-800 hover:border-brand pl-8 transition-colors duration-300">
+                <p className="font-sans text-brand text-xs md:text-sm uppercase tracking-widest font-bold mb-2">{exp.period}</p>
+                <h3 className="font-display text-3xl md:text-4xl uppercase tracking-tighter text-white mb-1">{exp.title}</h3>
+                <p className="font-sans text-zinc-500 font-semibold mb-6">{exp.company}</p>
+                <p className="font-sans text-zinc-400 leading-relaxed text-sm md:text-base">{exp.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          {/* Education & Achievements */}
-          <div className="space-y-24">
-            <div>
-              <h2 className="font-display text-5xl uppercase tracking-tighter text-white mb-12">Education</h2>
-              <div className="space-y-12">
-                {education.map((edu, index) => (
-                  <div key={index} className="group border-l-4 border-zinc-800 hover:border-brand pl-8 transition-colors duration-300">
-                    <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-2">{edu.period}</p>
-                    <h3 className="font-display text-3xl uppercase tracking-tighter text-white mb-1">{edu.degree}</h3>
-                    <p className="font-sans text-zinc-500 font-semibold mb-4">{edu.institution}</p>
-                    <p className="font-sans text-zinc-400 leading-relaxed text-sm">{edu.description}</p>
-                  </div>
-                ))}
+        {/* Education Sticky Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-32 border-t border-zinc-900 pt-24 relative">
+          <div className="lg:w-1/3">
+            <div className="sticky top-32">
+              <h2 className="font-display text-5xl md:text-7xl uppercase tracking-tighter text-white mb-6">Education</h2>
+            </div>
+          </div>
+          <div className="lg:w-2/3 space-y-16">
+            {education.map((edu, index) => (
+              <div key={index} className="group border-l-4 border-zinc-800 hover:border-brand pl-8 transition-colors duration-300">
+                <p className="font-sans text-brand text-xs md:text-sm uppercase tracking-widest font-bold mb-2">{edu.period}</p>
+                <h3 className="font-display text-3xl md:text-4xl uppercase tracking-tighter text-white mb-1">{edu.degree}</h3>
+                <p className="font-sans text-zinc-500 font-semibold mb-6">{edu.institution}</p>
+                <p className="font-sans text-zinc-400 leading-relaxed text-sm md:text-base">{edu.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Awards Sticky Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-24 border-t border-zinc-900 pt-24 relative">
+          <div className="lg:w-1/3">
+            <div className="sticky top-32">
+              <h2 className="font-display text-5xl md:text-7xl uppercase tracking-tighter text-white mb-6">Awards</h2>
+            </div>
+          </div>
+          <div className="lg:w-2/3 space-y-8">
+            <div className="bg-zinc-900/30 p-8 sm:p-12 border border-zinc-800 flex flex-col sm:flex-row gap-6 sm:gap-8 hover:border-brand transition-colors duration-300">
+              <Award className="w-10 h-10 text-brand shrink-0" />
+              <div>
+                <h4 className="font-display text-3xl uppercase tracking-tighter text-white mb-2">MetaMask Hackathon Winner</h4>
+                <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-6">Dev-Cook — April 2025</p>
+                <p className="font-sans text-zinc-400 text-sm leading-relaxed">Recognised as the winning developer at the MetaMask Dev-Cook hackathon, delivering an innovative solution within the MetaMask developer platform.</p>
               </div>
             </div>
-
-            <div>
-              <h2 className="font-display text-5xl uppercase tracking-tighter text-white mb-12">Awards</h2>
-              <div className="space-y-8">
-                <div className="bg-zinc-900/50 p-8 border border-zinc-800 flex gap-6 hover:border-brand transition-colors duration-300">
-                  <Award className="w-8 h-8 text-brand shrink-0" />
-                  <div>
-                    <h4 className="font-display text-2xl uppercase tracking-tighter text-white mb-2">MetaMask Hackathon Winner</h4>
-                    <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-4">Dev-Cook — April 2025</p>
-                    <p className="font-sans text-zinc-400 text-sm leading-relaxed">Recognised as the winning developer at the MetaMask Dev-Cook hackathon, delivering an innovative solution within the MetaMask developer platform.</p>
-                  </div>
-                </div>
-                <div className="bg-zinc-900/50 p-8 border border-zinc-800 flex gap-6 hover:border-brand transition-colors duration-300">
-                  <Award className="w-8 h-8 text-brand shrink-0" />
-                  <div>
-                    <h4 className="font-display text-2xl uppercase tracking-tighter text-white mb-2">Stacks Build Battle Winner</h4>
-                    <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-4">February 2025</p>
-                    <p className="font-sans text-zinc-400 text-sm leading-relaxed">Took first place at the Stacks Blockchain Build Battle, demonstrating strong proficiency in Bitcoin-layer smart contract development.</p>
-                  </div>
-                </div>
+            <div className="bg-zinc-900/30 p-8 sm:p-12 border border-zinc-800 flex flex-col sm:flex-row gap-6 sm:gap-8 hover:border-brand transition-colors duration-300">
+              <Award className="w-10 h-10 text-brand shrink-0" />
+              <div>
+                <h4 className="font-display text-3xl uppercase tracking-tighter text-white mb-2">Stacks Build Battle Winner</h4>
+                <p className="font-sans text-brand text-xs uppercase tracking-widest font-bold mb-6">February 2025</p>
+                <p className="font-sans text-zinc-400 text-sm leading-relaxed">Took first place at the Stacks Blockchain Build Battle, demonstrating strong proficiency in Bitcoin-layer smart contract development.</p>
               </div>
             </div>
           </div>
-
         </div>
 
       </div>

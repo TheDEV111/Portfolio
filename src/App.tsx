@@ -21,9 +21,12 @@ const LoadingSpinner: React.FC = () => (
   </div>
 );
 
+import CustomCursor from './Components/CustomCursor';
+
 const App: React.FC = () => {
   return (
     <div>
+      <CustomCursor />
       <Router>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>

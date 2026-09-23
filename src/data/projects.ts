@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: "LexiLead",
     description: "The operating system for Nigerian legal practice — unifying firm workspaces, client portals, billing, and AI document review",
     longDescription: "LexiLead is a comprehensive legal practice management platform tailored specifically for the Nigerian jurisdiction. It combines a secure multi-tenant backoffice for lawyers with an interactive PWA client portal. Key features include Naira-based billing (Paystack & direct transfer), NDPR-compliant role-based access, and Lexi AI—a powerful tool that analyzes contracts and surfaces relevant Nigerian case law precedents instantly.",
-    tech: ["React", "TypeScript", "Node.js", "AI/ML", "Paystack", "PWA"],
+    tech: ["Next.js", "NestJS", "Tailwind CSS", "TypeScript", "AI/ML", "Paystack", "PWA"],
     github: "",
     githubPrivate: true,
     live: "https://lexilead.com/",
